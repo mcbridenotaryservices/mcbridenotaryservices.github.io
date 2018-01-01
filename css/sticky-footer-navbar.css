@@ -1,0 +1,122 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 135px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 5px;
+  border-radius: 0; 
+}
+
+.navbar-brand {
+    padding: 10px 10px
+}
+
+.navbar-collapse {
+  padding-right: 0;
+}
+
+.carousel-indicators .active {
+  background-color: #000;
+}
+
+.marketing img {
+  width: 160px;
+  height: 160px;
+}
+
+.carousel-indicators li {
+  border-color: grey;
+}
+
+#myCarousel h1 {
+  margin-bottom: 80px;
+}
+
+.dropdown-header {
+  font-size: 14px;
+}
+
+ .marketing .col-lg-4 {
+  margin-bottom: 20px;
+ }
+
+.navbar-default {
+  background-color: #222;
+ /* border-color: #000000;*/
+}
+
+span, span small {
+  font-weight: lighter; 
+  color:#d0d0d0;
+}
+
+.activateStick {
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+.addShadow {
+  box-shadow: 5px 5px 10px #888888;
+  -moz-box-shadow: 5px 5px 10px #888888;
+  -webkit-box-shadow: 5px 5px 10px #888888;
+}
+
+.stickyBody {
+  padding-bottom: 57px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 135px;
+background-color: #222;
+}
+
+.footer p { 
+  color: #9d9d9d;
+}
+
+
+.navbar-fixed-top {
+
+  -moz-opacity: .8;
+  -webkit-opacity: .8;
+  filter:alpha(opacity=80);
+}
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 0 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.hideElement {
+  display: none;
+}
+
+.contactUsForm {
+  display: block;
+}
