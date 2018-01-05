@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Services | McBride Notary Services</title>
+
+		<!-- ===============
+			Page Head Info
+		================ -->		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="description" content="McBride Notary Services">
+		<meta name="author" content="Karen McBride">
+
+		<link href="./css/bootstrap.css" rel="stylesheet">
+		<link href="./css/sticky-footer-navbar.css" rel="stylesheet">
+
+
+		<!-- ===============
+			END Page Head Info
+		================ -->
+
+	</head>
+
+	<body">
+
+		<!-- ===============
+			Page Header
+		================ -->
+
+		{{> templates/pageHeader.mustache}}
+
+		<!-- ===============
+			END Page Header
+		================ -->
+
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 97px;">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="first-slide d-block w-100" src="./images/Header1.png" alt="First slide">
+				<!--             ref: https://www.pexels.com -->
+				</div>
+			</div>
+		</div>
+
+		<div class="container" style="padding-top: 3rem;">
+			<h3 class="display-4" style="margin-bottom: 20px;">Services & Fees</h3>
+			<div class="row" style="padding-top: 2rem;">
+				<div class="col-4">
+					<div class="list-group" id="list-tab" role="tablist">
+						<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Statutory Declarations</a>
+						<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Notarizing Documents</a>
+						<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Passport Applications</a>
+						<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Other Services</a>
+					</div>
+					<div class=>
+						
+					</div>
+					<p style="margin-top: 2rem; ">All services offered in French and English.</p>
+					<p>Mobile notary services available.</p>
+					<p>Multi document discount available on all services.</p>
+					<p>Student discounts available with valid student ID.</p>
+					<p class="text-center" style="margin-top: 2rem;"><a class="btn btn-primary" href="contact.html" role="button">Request Appointment</a></p>
+				</div>
+				<div class="col-8">
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+							<div class="card border-secondary mb-3">
+								<div class="card-header"><h3>Statutory Declarations</h3></div>
+								<div class="card-body">
+									<p style="margin-left: 3rem;">Common Law Union Statutory Declaration</p>
+									<p style="margin-left: 3rem;">Custodianship Declarations</p>
+									<p style="margin-left: 3rem;">Foreign Student Custodial Declarations</p>
+									<p style="margin-left: 3rem;">Statutory Declaration of Marital Status</p>
+									<p style="margin-left: 3rem;">Statutory Declaration to Change Name</p>
+								</div>
+								<div class="card-footer text-muted" style="margin: 0;">Fee: $TBD.00 per document
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+							<div class="card border-secondary mb-3">
+								<div class="card-header"><h3>Notarizing Documents</h3></div>
+								<div class="card-body">
+									<p style="margin-left: 3rem;">Notarization of Articles of Incorporation</p>
+								</div>
+								<div class="card-footer text-muted" style="margin: 0;">Fee: $TBD.00 per document</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+							<div class="card border-secondary mb-3">
+								<div class="card-header"><h3>Passport Applications</h3></div>
+								<div class="card-body">
+									<p style="margin-left: 3rem;">Statutory Declarations for Passports</p>
+									<p style="margin-left: 3rem;">Statutory Declarations for Lost, Damaged or Destroyed Passports</p>
+								</div>
+								<div class="card-footer text-muted" style="margin: 0;">Fee: $TBD.00 per document</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+							<div class="card border-secondary mb-3">
+								<div class="card-header"><h3>Other Services</h3></div>
+								<div class="card-body">
+									<p style="margin-left: 3rem;">Certify copies of original documents as true copies</p>
+									<p style="margin-left: 3rem;">Commission of Oaths</p>
+									<p style="margin-left: 3rem;">Family Law Affidavits</p>
+									<p style="margin-left: 3rem;">Letter of Invitation</p>
+									<p style="margin-left: 3rem;">Permission to Travel with a Minor</p>
+									<p style="margin-left: 3rem;">Proof of Loss Documents</p>
+									<p style="margin-left: 3rem;">Professional Applications</p>
+									<p style="margin-left: 3rem;">Swearing Affidavits</p>
+									<p style="margin-left: 3rem;">Witnessing Signatures</p>
+								</div>
+								<div class="card-footer text-muted" style="margin: 0;">Fee: $TBD.00 per document</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ===============
+		   Page Footer
+		================ -->
+
+		{{> templates/pageFooter.mustache}}
+
+		<!-- ===============
+		   END Page Footer
+		================ -->
+
+		<!-- ===============
+		   Page Script Info
+		================ -->
+
+		{{> templates/pageScript.mustache}}
+
+		<!-- ===============
+		   END Page Script Info
+		================ -->
+	
+	</body>
+</html>

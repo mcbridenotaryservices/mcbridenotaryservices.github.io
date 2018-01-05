@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Contact Us | McBride Notary Services</title>
+
+		<!-- ===============
+			Page Head Info
+		================ -->		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="description" content="McBride Notary Services">
+		<meta name="author" content="Karen McBride">
+
+		<link href="./css/bootstrap.css" rel="stylesheet">
+		<link href="./css/sticky-footer-navbar.css" rel="stylesheet">
+
+
+		<!-- ===============
+			END Page Head Info
+		================ -->
+
+	</head>
+
+	<body>
+
+		<!-- ===============
+			Page Header
+		================ -->
+
+		{{> templates/pageHeader.mustache}}
+
+		<!-- ===============
+			END Page Header
+		================ -->
+
+
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 97px;">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="first-slide d-block w-100" src="./images/headerContactUs.png" alt="First slide">
+				<!--             ref: https://www.pexels.com -->
+				</div>
+			</div>
+		</div>
+
+		<div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
+			<h3 class="display-4" style="margin-bottom: 20px;">Contact Us</h3>
+			<div class="row">
+				<div class="col-md-6">
+					<p style="font-size: 1rem;">If you would like to book an appointment or have any questions about our services, please complete the form below. Appointments are available days, evenings and weekends, and on urgent or short notice.</p>
+				</div>
+				<div class="col-md-6">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<form style="margin-bottom: 2rem;">
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<input type="text" class="form-control" id="inputFirstName" placeholder="First Name" style="background-color: #f3f4f5;">
+							</div>
+							<div class="form-group col-md-6">
+								<input type="text" class="form-control" id="inputLastName" placeholder="Last Name" style="background-color: #f3f4f5;">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<input type="text" class="form-control" id="inputPhone" placeholder="Phone Number" style="background-color: #f3f4f5;">
+							</div>
+							<div class="form-group col-md-6">
+								<input type="email" class="form-control" id="inputEmail" placeholder="Email" style="background-color: #f3f4f5;">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<select id="inputLocation" class="form-control" style="background-color: #f3f4f5;">
+									<option selected>Select Location</option>
+									<option>London West</option>
+									<option>London East</option>
+								</select>
+							</div>
+							<div class="form-group col-md-6">
+								<input type="text" class="form-control" id="inputApptDate" placeholder="Preferred Date" style="background-color: #f3f4f5;">
+							</div>							
+						</div>
+						<div class="form-group">
+							<select id="inputService" class="form-control" style="background-color: #f3f4f5;">
+								<option selected>Select Service</option>
+								<option>Commission of Oaths</option>
+								<option>Letter of Invitation</option>
+								<option>Notarization of Document</option>
+								<option>Passport Application</option>
+								<option>Permission to Travel with a Minor</option>
+								<option>Professional Applications</option>
+								<option>Proof of Loss Document</option>
+								<option>Statutory Declaration</option>
+								<option>Swearing Affidavit</option>
+								<option>Witnessing Signature</option>
+								<option>Other</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" id="inputMessage" rows="3" placeholder="Message" style="background-color: #f3f4f5;"></textarea>
+						</div>
+						<p style="font-size: .8rem; line-height: 1.5;">To safeguard your personal information, please do not include any confidential or sensitive information in your message.</p>
+						<button type="submit" class="btn btn-primary btn-block" id="submitInfo">Request Appointment</button>
+					</form>
+
+					<div class="row" id="thankyoumsg" style="display: none;">
+						<div class="col-12">
+							<p>Thank you for your request.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-1">
+				</div>
+				<div class="col-md-3">
+					<div class="row" style="padding-bottom: 2rem;">
+						<div class="col-2">
+							<span class="glyphicon glyphicon-phone" aria-hidden="true" style="color: #000; font-size: 1.5rem;">
+						</div>
+						<div class="col-10">
+							<a href="tel:+1-416-919-5273" style="color: #343a40; font-weight: bold;"></span>416.919.5273</a>
+						</div>
+					</div>
+					<div class="row" style="padding-bottom: 2rem;">
+						<div class="col-2">
+							<span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: #000; padding-right: 1rem; font-size: 1.5rem;">
+						</div>
+						<div class="col-10">
+							<a href="mailto:kmcbr072@gmail.com?Subject=Notary%20Services" target="_top" style="color: #343a40; font-weight: bold;"></span>kmcbr072@gmail.com</a>
+						</div>
+					</div>
+					<div class="row" style="padding-bottom: 2rem;">
+						<div class="col-2">
+							<img alt="Insta Logo" target="_blank" style="height: 25px;" src="./images/linkedin_logo_128_blk.png" />
+						</div>
+						<div class="col-10">
+							<a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank" style="color: #343a40; font-weight: bold;"></span>LinkedIn Profile</a>
+						</div>
+					</div>
+					<div class="row" style="padding-bottom: 2rem;">
+						<div class="col-2">
+							<img alt="Twitter Logo" style="height: 25px;" src="./images/twitter_logo_128_blk.png" />
+						</div>
+						<div class="col-10">
+							<a href="#" target="_blank" style="color: #343a40; font-weight: bold;"></span>@twitter</a>
+						</div>
+					</div>
+					<div class="row" style="padding-bottom: 2rem;">
+						<div class="col-2">
+							<img alt="Insta Logo" style="height: 25px;" src="./images/glyph-logo_May2016.png" />
+						</div>
+						<div class="col-10">
+							<a href="https://www.instagram.com/karenjmcbride/" target="_blank" style="color: #343a40; font-weight: bold;">@karenjmcbride</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- 		<div class="container" style="padding-bottom: 3rem; padding-top: 2rem;">
+			<div class="row">
+				<h5>Please Note:</h5>
+				<p>1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
+				<p>2. Complete all documents prior to appointment except for signatures and dates.</p>
+				<p>3. The person signing the document must appear before the Notary Public.</p>
+				<p>4. For certified copies of documents, please bring the original documents and the photocopy.</p>
+				<p>5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
+			</div>
+		</div> -->
+
+
+		<!-- ===============
+		   Page Footer
+		================ -->
+
+		{{> templates/pageFooter.mustache}}
+
+		<!-- ===============
+		   END Page Footer
+		================ -->
+
+		<!-- ===============
+		   Page Script Info
+		================ -->
+
+		{{> templates/pageScript.mustache}}
+
+		<!-- ===============
+		   END Page Script Info
+		================ -->
+	
+		<script type="text/javascript">
+
+			$("#submitInfo").on( "click", function() {
+
+				var formValues = {"timestamp": new Date(), "ipAddress": "{{client_ip}}", "referrer": "{{referer}}"};
+
+				$(".form-control").each(function(index,element) {
+					formValues[element.id] = element.value;
+				});
+
+				function successFunction(data, codeString) {console.log("success handler: " + codeString);}
+				function errorFunction(data, errorState, errorReason) {console.log("error " + errorReason);}
+				
+				$.ajax({
+					method: 'put',
+					url: "/sheet/MNSTest/row",
+					data: JSON.stringify(formValues),
+					processData: false,
+					contentType: "application/json",
+					success: successFunction,
+					error: errorFunction
+				});
+			
+				$("form").css( "display", "none" );
+				$("#thankyoumsg").css( "display", "block" );
+
+			});
+
+		</script>
+
+	</body>
+</html>

@@ -97,10 +97,10 @@
 					<form style="margin-bottom: 2rem;">
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<input type="text" class="form-control" id="inputName" placeholder="First Name" style="background-color: #f3f4f5;">
+								<input type="text" class="form-control" id="inputFirstName" placeholder="First Name" style="background-color: #f3f4f5;">
 							</div>
 							<div class="form-group col-md-6">
-								<input type="text" class="form-control" id="inputName" placeholder="Last Name" style="background-color: #f3f4f5;">
+								<input type="text" class="form-control" id="inputLastName" placeholder="Last Name" style="background-color: #f3f4f5;">
 							</div>
 						</div>
 						<div class="form-row">
@@ -120,7 +120,7 @@
 								</select>
 							</div>
 							<div class="form-group col-md-6">
-								<input type="text" class="form-control" id="inputDate" placeholder="Preferred Date" style="background-color: #f3f4f5;">
+								<input type="text" class="form-control" id="inputApptDate" placeholder="Preferred Date" style="background-color: #f3f4f5;">
 							</div>							
 						</div>
 						<div class="form-group">
@@ -140,11 +140,16 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<textarea class="form-control" id="formControlTextarea1" rows="3" placeholder="Message" style="background-color: #f3f4f5;"></textarea>
+							<textarea class="form-control" id="inputMessage" rows="3" placeholder="Message" style="background-color: #f3f4f5;"></textarea>
 						</div>
 						<p style="font-size: .8rem; line-height: 1.5;">To safeguard your personal information, please do not include any confidential or sensitive information in your message.</p>
 						<button type="submit" class="btn btn-primary btn-block">Request Appointment</button>
 					</form>
+					<div class="row" id="thankyoumsg" style="display: none;">
+						<div class="col-12">
+							<p>Thank you for your request.</p>
+						</div>
+					</div>
 				</div>
 				<div class="col-md-1">
 				</div>
@@ -237,7 +242,34 @@
 		   END Page Script Info
 		================ -->
 
-		<script></script>
-	
+		<script type="text/javascript">
+
+			$("#submitInfo").on( "click", function() {
+
+				var formValues = {"timestamp": new Date(), "ipAddress": "{{client_ip}}", "referrer": "{{referer}}"};
+
+				$(".form-control").each(function(index,element) {
+					formValues[element.id] = element.value;
+				});
+
+				function successFunction(data, codeString) {console.log("success handler: " + codeString);}
+				function errorFunction(data, errorState, errorReason) {console.log("error " + errorReason);}
+				
+				$.ajax({
+					method: 'put',
+					url: "/sheet/MNSTest/row",
+					data: JSON.stringify(formValues),
+					processData: false,
+					contentType: "application/json",
+					success: successFunction,
+					error: errorFunction
+				});
+			
+				$("form").css( "display", "none" );
+				$("#thankyoumsg").css( "display", "block" );
+
+			});
+
+		</script>	
 	</body>
 </html>
