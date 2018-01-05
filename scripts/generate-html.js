@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const targetFilePath = path.join.bind(path, __dirname, "../generated-html");
+const targetFilePath = path.join.bind(path, __dirname, "..");
 const writeFile = require("util").promisify(fs.writeFile);
 const mu = require("mustache");
 const sheetData = require("./sheet-data.js");
