@@ -11,7 +11,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate-html": "node scripts/generate-html.js"
+    "generate-html": "node scripts/generate-html.js",
+    "pull-generate-push": "git pull && npm run generate-html && git add *.html && git commit -m 'Webhook update' && git push"
   },
   "author": "Tyler Johnson <mail@tyler-johnson.ca> (http://github.com/tejohnso)",
   "license": "ISC"

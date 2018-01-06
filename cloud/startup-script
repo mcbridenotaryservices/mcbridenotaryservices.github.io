@@ -1,0 +1,23 @@
+# update
+apt-get update && sudo apt-get -y upgrade
+
+# install git
+apt-get install -y git
+
+# install nodejs
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+apt-get install -y nodejs
+
+# set up GITHUB DEPLOY SSH KEY
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+curl "http://metadata.google.internal/computeMetadata/v1/project/attributes/GITHUB_DEPLOY_PRIVATE_KEY" -H "Metadata-Flavor: Google" >~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+ssh-keyscan -H github.com >~/.ssh/known_hosts
+
+# clone repo
+git clone git@github.com:4by34/website-mockup.git
+
+# start webhook
+cd website-mockup
+TRIGGER_KEY= node cloud/webhook.js
