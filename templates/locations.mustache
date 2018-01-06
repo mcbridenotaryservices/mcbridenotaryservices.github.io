@@ -46,7 +46,7 @@
 
 				<div class="col-md-6" style="padding-bottom: 1.5rem;">
 					<div class="card">
-						<img class="card-img-top" alt="London West Map" src="./images/londonWestMap538x383.png" />
+						<div id="map1" style="width: 538px; height: 383px;"></div>
 						<div class="card-body text-center">
 							<h4 class="card-title">London West</h4>
 							<p class="card-text">Wonderland Road North & Riverside Drive</p>
@@ -56,7 +56,7 @@
 				</div>
 				<div class="col-md-6" style="padding-bottom: 1.5rem;">
 					<div class="card">
-						<img class="card-img-top" alt="London East Map" src="./images/londonEastMap538x383.png" />
+						<div id="map2" style="width: 538px; height: 383px;"></div>
 						<div class="card-body text-center">
 							<h4 class="card-title">London East</h4>
 							<p class="card-text">Commissioners Road East & Highbury Avenue North</p>
@@ -83,6 +83,44 @@
 		================ -->
 
 		{{> script}}
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsWf36ju-hfX7_5ddPLL_sstioL8mkHHk&callback=myMap" type="text/javascript"></script>
+
+		<script type="text/javascript">
+			function myMap() {
+
+				var myLatLng1 = {lat: 42.976455, lng: -81.290103};
+				var myLatLng2 = {lat: 42.963412, lng: -81.190690};
+
+			    // var mapOptions(myLatLng) = {
+			    //     center: new google.maps.LatLng(myLatLng),
+			    //     zoom: 15,
+			    //     mapTypeId: google.maps.MapTypeId.ROADMAP
+			    // }
+				var map1 = new google.maps.Map(document.getElementById("map1"), {
+					center: myLatLng1,
+					zoom: 15,
+					mapTypeId: google.maps.MapTypeId.ROADMAP					
+					});
+
+				var map2 = new google.maps.Map(document.getElementById("map2"), {
+					center: myLatLng2,
+					zoom: 15,
+					mapTypeId: google.maps.MapTypeId.ROADMAP					
+					});
+				
+				var marker1 = new google.maps.Marker({
+					position: myLatLng1,
+					map: map1,
+					title: 'London West Location'
+				});
+
+				var marker2 = new google.maps.Marker({
+					position: myLatLng2,
+					map: map2,
+					title: 'London West Location'
+				});
+			}
+		</script>
 
 		<!-- ===============
 		   END Page Script Info
