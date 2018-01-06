@@ -1,16 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Contact Us | McBride Notary Services</title>
+		<title>Contact Us | {{companyName}}</title>
 
 		<!-- ===============
 			Page Head Info
 		================ -->		
 
-    {{> head}}
+		{{> head}}
 
-		<meta name="description" content="McBride Notary Services">
-		<meta name="author" content="Karen McBride">
+		<meta name="description" content="{{companyName}}">
+		<meta name="author" content="{{ownerName}}">
 
 		<!-- ===============
 			END Page Head Info
@@ -45,7 +45,8 @@
 			<div class="row">
 				<div class="col-md-6">
 					<p style="font-size: 1rem;">If you would like to book an appointment or have any questions about our services, please complete the form below. Appointments are available days, evenings and weekends, and on urgent or short notice.</p>
-				</div>
+<!-- 					{{contactUsText}}
+ -->				</div>
 				<div class="col-md-6">
 				</div>
 			</div>
@@ -83,6 +84,11 @@
 						<div class="form-group">
 							<select id="inputService" class="form-control" style="background-color: #f3f4f5;">
 								<option selected>Select Service</option>
+								
+								{{#rows}}
+									<p>{{servicesList}}</p>
+								{{/rows}}
+
 								<option>Commission of Oaths</option>
 								<option>Letter of Invitation</option>
 								<option>Notarization of Document</option>
@@ -100,12 +106,14 @@
 							<textarea class="form-control" id="inputMessage" rows="3" placeholder="Message" style="background-color: #f3f4f5;"></textarea>
 						</div>
 						<p style="font-size: .8rem; line-height: 1.5;">To safeguard your personal information, please do not include any confidential or sensitive information in your message.</p>
+						{{contactUsSecurityText}}
 						<button type="submit" class="btn btn-primary btn-block" id="submitInfo">Request Appointment</button>
 					</form>
 
 					<div class="row" id="thankyoumsg" style="display: none;">
 						<div class="col-12">
 							<p>Thank you for your request.</p>
+							{{contactUsThxText}}
 						</div>
 					</div>
 				</div>
@@ -118,7 +126,7 @@
 							<span class="glyphicon glyphicon-phone" aria-hidden="true" style="color: #000; font-size: 1.5rem;">
 						</div>
 						<div class="col-10">
-							<a href="tel:+1-416-919-5273" style="color: #343a40; font-weight: bold;"></span>416.919.5273</a>
+							<a href="tel:+1-{{companyPhone}}" style="color: #343a40; font-weight: bold;"></span>{{companyPhone}}</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -126,7 +134,8 @@
 							<span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: #000; padding-right: 1rem; font-size: 1.5rem;">
 						</div>
 						<div class="col-10">
-							<a href="mailto:kmcbr072@gmail.com?Subject=Notary%20Services" target="_top" style="color: #343a40; font-weight: bold;"></span>kmcbr072@gmail.com</a>
+							<a href="mailto:{{companyEmail}}?Subject=Notary%20Services" target="_top" style="color: #343a40; font-weight: bold;"></span>kmcbr072@gmail.com</a>
+							{{companyEmail}}
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -134,7 +143,7 @@
 							<img alt="Insta Logo" target="_blank" style="height: 25px;" src="./images/linkedin_logo_128_blk.png" />
 						</div>
 						<div class="col-10">
-							<a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank" style="color: #343a40; font-weight: bold;"></span>LinkedIn Profile</a>
+							<a href="{{{link_Linkedin}}}" target="_blank" style="color: #343a40; font-weight: bold;"></span>LinkedIn Profile</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -142,7 +151,8 @@
 							<img alt="Twitter Logo" style="height: 25px;" src="./images/twitter_logo_128_blk.png" />
 						</div>
 						<div class="col-10">
-							<a href="#" target="_blank" style="color: #343a40; font-weight: bold;"></span>@twitter</a>
+							<a href="{{{link_Twitter}}}" target="_blank" style="color: #343a40; font-weight: bold;"></span>@twitter</a>
+							{{twitterHandle}}
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -150,7 +160,8 @@
 							<img alt="Insta Logo" style="height: 25px;" src="./images/glyph-logo_May2016.png" />
 						</div>
 						<div class="col-10">
-							<a href="https://www.instagram.com/karenjmcbride/" target="_blank" style="color: #343a40; font-weight: bold;">@karenjmcbride</a>
+							<a href="{{{link_Instagram}}}" target="_blank" style="color: #343a40; font-weight: bold;">@karenjmcbride</a>
+							{{instagramHandle}}
 						</div>
 					</div>
 				</div>

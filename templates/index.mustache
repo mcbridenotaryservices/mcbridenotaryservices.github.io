@@ -7,10 +7,11 @@
 			Page Head Info
 		================ -->		
 
-    {{> head}}
+		{{> head}}
 
-		<meta name="description" content="McBride Notary Services">
-		<meta name="author" content="Karen McBride">
+		<meta name="description" content="{{companyName}}">
+		<meta name="author" content="{{ownerName}}">
+
 
 		<!-- ===============
 			END Page Head Info
@@ -132,7 +133,8 @@
 					</figure>
 				</div>
 				<div class="col-md-8">
-					<h2>{{ownerName}} <span style="color: #9e9d9d;">| Barrister and Solicitor</span></h2>
+					<h2>{{ownerName}} <span style="color: #9e9d9d;">| Barrister and Solicitor</span></h2> 
+					{{ownerTitle}}
 					<p>{{briefBio}}</p>
 					<p><a class="btn btn-outline-secondary" href="about.html" role="button">See Full Bio</a></p>
 				</div>

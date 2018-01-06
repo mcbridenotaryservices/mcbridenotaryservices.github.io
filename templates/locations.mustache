@@ -1,16 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Locations | McBride Notary Services</title>
+		<title>Locations | {{companyName}}</title>
 
 		<!-- ===============
 			Page Head Info
 		================ -->		
 
-    {{> head}}
+		{{> head}}
 
-		<meta name="description" content="McBride Notary Services">
-		<meta name="author" content="Karen McBride">
+		<meta name="description" content="{{companyName}}">
+		<meta name="author" content="{{ownerName}}">
 
 		<!-- ===============
 			END Page Head Info
@@ -42,6 +42,7 @@
 		<div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
 			<h3 class="display-4" style="margin-bottom: 20px;">Locations</h3>
 			<p style="margin-top: 2rem; font-size: 1.25rem; ">In addition to our two convenient locations, McBride Notary Services also offers mobile notary services.  Please <a href="contact.html">contact us</a> for more information.</p>
+			{{locationsText}}
 			<div class="row" style="align-items: center; padding-top: 1rem;">
 
 				<div class="col-md-6" style="padding-bottom: 1.5rem;">

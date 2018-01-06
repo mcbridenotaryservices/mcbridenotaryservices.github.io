@@ -1,16 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Services | McBride Notary Services</title>
+		<title>Services | {{companyName}}</title>
 
 		<!-- ===============
 			Page Head Info
 		================ -->		
 
-    {{> head}}
+		{{> head}}
 
-		<meta name="description" content="McBride Notary Services">
-		<meta name="author" content="Karen McBride">
+		<meta name="description" content="{{companyName}}">
+		<meta name="author" content="{{ownerName}}">
 
 		<!-- ===============
 			END Page Head Info
@@ -48,10 +48,11 @@
 						<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Notarizing Documents</a>
 						<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Passport Applications</a>
 						<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Other Services</a>
+<!-- 						{{#rows}}
+							<a class="list-group-item list-group-item-action" id="list-{{uniqueServiceId_HIDDEN}}-list" data-toggle="list" href="#list-{{uniqueServiceId_HIDDEN}}" role="tab" aria-controls="{{uniqueServiceId_HIDDEN}}">{{servicesList}}</a>
+						{{/rows}} -->
 					</div>
-					<div class=>
-						
-					</div>
+
 					<p style="margin-top: 2rem; ">All services offered in French and English.</p>
 					<p>Multi document discount available on all services.</p>
 					<p>Student discounts available with valid student ID.</p>
@@ -73,6 +74,13 @@
 								</div>
 							</div>
 						</div>
+
+						{{#rows}}
+							{{#columns}}
+								{{> templates/partials/servicesDetails.mustache}}
+							{{/columns}}
+						{{/rows}}
+
 						<div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
 							<div class="card border-secondary mb-3">
 								<div class="card-header"><h3>Notarizing Documents</h3></div>
