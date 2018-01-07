@@ -84,22 +84,9 @@
 						<div class="form-group">
 							<select id="inputService" class="form-control" style="background-color: #f3f4f5;">
 								<option selected>Select Service</option>
-								
-								{{#rows}}
-									<p>{{servicesList}}</p>
-								{{/rows}}
-
-								<option>Commission of Oaths</option>
-								<option>Letter of Invitation</option>
-								<option>Notarization of Document</option>
-								<option>Passport Application</option>
-								<option>Permission to Travel with a Minor</option>
-								<option>Professional Applications</option>
-								<option>Proof of Loss Document</option>
-								<option>Statutory Declaration</option>
-								<option>Swearing Affidavit</option>
-								<option>Witnessing Signature</option>
-								<option>Other</option>
+								{{#services}}
+                  <option>{{.}}</option>
+								{{/services}}
 							</select>
 						</div>
 						<div class="form-group">
