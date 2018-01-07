@@ -1,0 +1,25 @@
+{
+  "spreadsheetId": "1oTNRuM20uQHu3Umpm4tFRhD8hCo4cgVDc9NgB8nMMBY",
+  "namedRanges": [
+    {
+      "type": "fields",
+      "name": "basicData"
+    },
+    {
+      "type": "fields",
+      "name": "companyData"
+    },
+    {
+      "type": "list",
+      "name": "bio"
+    },
+    {
+      "type": "list",
+      "name": "services"
+    },
+    {
+      "type": "groupedList",
+      "name": "serviceDetails"
+    }
+  ]
+}

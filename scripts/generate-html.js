@@ -5,16 +5,18 @@ const writeFile = require("util").promisify(fs.writeFile);
 const mu = require("mustache");
 const sheetData = require("./sheet-data.js");
 const templates = require("./templates.js");
+const config = require("./sheet-config.js");
 
 if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
   return console.log("NO GOOGLE_APPLICATION_CREDENTIALS");
 }
 
-Promise.all([
-  sheetData.getData(),
+config.verifyConfiguredRangeNames()
+.then(()=>Promise.all([
+  sheetData.getAllData(),
   templates.getTemplates(),
   templates.getPartials()
-])
+]))
 .then(([sheetData, templates, partials])=>{
   Object.keys(templates).forEach(templateName=>{
     const template = templates[templateName];
