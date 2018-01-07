@@ -10,7 +10,7 @@ if (!triggerKey) {console.log("NO TRIGGER KEY"); return;}
 
 http.createServer((req, resp)=>{
   if (req.url === "/hc") {return resp.end();}
-  if (!req.url.includes(triggerKey)) {return;}
+  if (!req.url.includes(triggerKey)) {return req.destroy();}
 
   exec("npm run pull-generate-push", {cwd})
   .then((stdout, stderr)=>{
