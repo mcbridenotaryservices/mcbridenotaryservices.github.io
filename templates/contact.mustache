@@ -40,18 +40,24 @@
 			</div>
 		</div>
 
-		<div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
+		<div class="container" style="padding-top: 3rem; padding-bottom: 3rem; min-height: 713px;">
 			<h3 class="display-4" style="margin-bottom: 20px;">Contact Us</h3>
 			<div class="row">
 				<div class="col-md-6">
-					<p style="font-size: 1rem;">If you would like to book an appointment or have any questions about our services, please complete the form below. Appointments are available days, evenings and weekends, and on urgent or short notice.</p>
-<!-- 					{{contactUsText}}
- -->				</div>
-				<div class="col-md-6">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
+					<div id="thankyoumsg" style="display: none;">
+						<p>Thank you for your request. You will be contacted within 24 hours.</p>
+						<!-- {{contactUsThxText}} -->
+						<h5 style="padding-top: 2rem; font-weight: bold;">Please Note:</h5>
+						<p>1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
+						<p>2. Complete all documents prior to appointment except for signatures and dates.</p>
+						<p>3. The person signing the document must appear before the Notary Public.</p>
+						<p>4. For certified copies of documents, please bring the original document and the photocopy.</p>
+						<p>5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
+					</div>
+					<div id="contactMsg" >
+						<p style="font-size: 1rem;">If you would like to book an appointment or have any questions about our services, please complete the form below. Appointments are available days, evenings and weekends, and on urgent or short notice.</p>
+<!-- 						{{contactUsText}} -->
+					</div>
 					<form style="margin-bottom: 2rem;">
 						<div class="form-row">
 							<div class="form-group col-md-6">
@@ -85,7 +91,7 @@
 							<select id="inputService" class="form-control" style="background-color: #f3f4f5;">
 								<option selected>Select Service</option>
 								{{#services}}
-                  <option>{{.}}</option>
+                  					<option>{{.}}</option>
 								{{/services}}
 							</select>
 						</div>
@@ -96,18 +102,10 @@
 						{{contactUsSecurityText}}
 						<button type="submit" class="btn btn-primary btn-block" id="submitInfo">Request Appointment</button>
 					</form>
-
-					<div class="row" id="thankyoumsg" style="display: none;">
-						<div class="col-12">
-							<p>Thank you for your request.</p>
-							{{contactUsThxText}}
-						</div>
-					</div>
 				</div>
-
 				<div class="col-md-1">
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3"  style="padding-top: 6.5rem;">
 					<div class="row" style="padding-bottom: 2rem;">
 						<div class="col-2">
 							<span class="glyphicon glyphicon-phone" aria-hidden="true" style="color: #000; font-size: 1.5rem;">
@@ -155,18 +153,6 @@
 			</div>
 		</div>
 
-<!-- 		<div class="container" style="padding-bottom: 3rem; padding-top: 2rem;">
-			<div class="row">
-				<h5>Please Note:</h5>
-				<p>1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
-				<p>2. Complete all documents prior to appointment except for signatures and dates.</p>
-				<p>3. The person signing the document must appear before the Notary Public.</p>
-				<p>4. For certified copies of documents, please bring the original documents and the photocopy.</p>
-				<p>5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
-			</div>
-		</div> -->
-
-
 		<!-- ===============
 		   Page Footer
 		================ -->
@@ -189,30 +175,12 @@
 	
 		<script type="text/javascript">
 
-			$("#submitInfo").on( "click", function() {
-
-				var formValues = {"timestamp": new Date(), "ipAddress": "{{client_ip}}", "referrer": "{{referer}}"};
-
-				$(".form-control").each(function(index,element) {
-					formValues[element.id] = element.value;
-				});
-
-				function successFunction(data, codeString) {console.log("success handler: " + codeString);}
-				function errorFunction(data, errorState, errorReason) {console.log("error " + errorReason);}
-				
-				$.ajax({
-					method: 'put',
-					url: "/sheet/MNSTest/row",
-					data: JSON.stringify(formValues),
-					processData: false,
-					contentType: "application/json",
-					success: successFunction,
-					error: errorFunction
-				});
-			
+			$("#submitInfo").on( "click", function(event) {
+				// onclick="google.script.run.writeForm(this.parentNode)"
+				event.preventDefault()
 				$("form").css( "display", "none" );
+				$("#contactMsg").css( "display", "none" );
 				$("#thankyoumsg").css( "display", "block" );
-
 			});
 
 		</script>
