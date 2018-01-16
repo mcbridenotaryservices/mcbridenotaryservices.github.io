@@ -34,21 +34,16 @@
 			<div class="row">
 				<div class="col-md-4">
 					<figure class="figure">
-						<img src="./images/headshot.JPG" class="figure-img img-fluid rounded" alt="{{ownerName}}" />
+						<img src="./images/headShotBio_645x959.jpg" class="figure-img img-fluid rounded" alt="{{ownerName}}" />
 					</figure>
 				</div>
 				<div class="col-md-8">
-					<h2 style="margin-bottom: 2.5rem;">{{ownerName}} <span style="color: #9e9d9d;">| Barrister and Solicitor</span></h2> 
-					{{ownerTitle}}
+					<h2 style="margin-bottom: 2rem;">{{ownerName}} <span style="color: #9e9d9d;">| {{ownerTitle}}</span></h2> 
 
-					{{#rows}}
-						<p>{{briefBio}}</p>
-					{{/rows}}
+					{{#bio}}
+						<p style="font-size: 1.2rem">{{.}}</p>
+					{{/bio}}
 
-					<p>Karen McBride received her call to the Bar of Ontario in June 2007, after earning her Bachelor of Laws degree from the University of Ottawa in 2006. She earned a Bachelor of Arts (Honours) degree in English Literature from Wilfrid Laurier University in 2003.</p>
-					<p>Karen practices exclusively in the area of workers’ compensation law. Licensed by the Law Society of Upper Canada, Karen represents clients nationally and appears before Workers’ Compensation Board/Commission Appeal Divisions and external Workers’ Compensation Tribunals across Canada.</p>  
-					<p>Previously, Karen worked as an associate at Polishuk Camman and Steele Barristers and Solicitors. During her time there, she practiced in the area of labour and employment law. Prior to that, Karen worked for the Ministry of Community and Social Services and the Ministry of Children and Youth Services as both an articling student and as legal counsel.</p>
-					<p>Karen McBride was appointed as a Notary Public in the province of Ontario in 2010. McBride Notary Services was first established in 2016.</p>
 				</div>
 			</div>
 		</div>

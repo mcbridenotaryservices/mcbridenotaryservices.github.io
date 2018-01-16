@@ -45,8 +45,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div id="thankyoumsg" style="display: none;">
-						<p>Thank you for your request. You will be contacted within 24 hours.</p>
-						<!-- {{contactUsThxText}} -->
+						<p>{{contactUsThxText}}</p>
 						<h5 style="padding-top: 2rem; font-weight: bold;">Please Note:</h5>
 						<p>1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
 						<p>2. Complete all documents prior to appointment except for signatures and dates.</p>
@@ -55,8 +54,10 @@
 						<p>5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
 					</div>
 					<div id="contactMsg" >
-						<p style="font-size: 1rem;">If you would like to book an appointment or have any questions about our services, please complete the form below. Appointments are available days, evenings and weekends, and on urgent or short notice.</p>
-<!-- 						{{contactUsText}} -->
+						<p style="font-size: 1rem;">{{contactUsText}}</p>
+					</div>
+					<div id="formIncomplete" style="display: none;">
+						<p style="font-size: 1rem; color: red;">Please complete highlighted fields.</p>
 					</div>
 					<form style="margin-bottom: 2rem;">
 						<div class="form-row">
@@ -98,8 +99,8 @@
 						<div class="form-group">
 							<textarea class="form-control" id="inputMessage" rows="3" placeholder="Message" style="background-color: #f3f4f5;"></textarea>
 						</div>
-						<p style="font-size: .8rem; line-height: 1.5;">To safeguard your personal information, please do not include any confidential or sensitive information in your message.</p>
-						{{contactUsSecurityText}}
+						<p style="font-size: .8rem; line-height: 1.5;">{{contactUsSecurityText}}</p>
+						
 						<button type="submit" class="btn btn-primary btn-block" id="submitInfo">Request Appointment</button>
 					</form>
 				</div>
@@ -119,8 +120,7 @@
 							<span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: #000; padding-right: 1rem; font-size: 1.5rem;">
 						</div>
 						<div class="col-10">
-							<a href="mailto:{{companyEmail}}?Subject=Notary%20Services" target="_top" style="color: #343a40; font-weight: bold;"></span>kmcbr072@gmail.com</a>
-							{{companyEmail}}
+							<a href="mailto:{{companyEmail}}?Subject=Notary%20Services" target="_top" style="color: #343a40; font-weight: bold;"></span>{{companyEmail}}</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -136,8 +136,8 @@
 							<img alt="Twitter Logo" style="height: 25px;" src="./images/twitter_logo_128_blk.png" />
 						</div>
 						<div class="col-10">
-							<a href="{{{link_Twitter}}}" target="_blank" style="color: #343a40; font-weight: bold;"></span>@twitter</a>
-							{{twitterHandle}}
+							<a href="{{{link_Twitter}}}" target="_blank" style="color: #343a40; font-weight: bold;"></span>{{twitterHandle}}</a>
+							
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -145,8 +145,7 @@
 							<img alt="Insta Logo" style="height: 25px;" src="./images/glyph-logo_May2016.png" />
 						</div>
 						<div class="col-10">
-							<a href="{{{link_Instagram}}}" target="_blank" style="color: #343a40; font-weight: bold;">@karenjmcbride</a>
-							{{instagramHandle}}
+							<a href="{{{link_Instagram}}}" target="_blank" style="color: #343a40; font-weight: bold;">{{instagramHandle}}</a>
 						</div>
 					</div>
 				</div>
@@ -176,11 +175,31 @@
 		<script type="text/javascript">
 
 			$("#submitInfo").on( "click", function(event) {
-				// onclick="google.script.run.writeForm(this.parentNode)"
 				event.preventDefault()
-				$("form").css( "display", "none" );
-				$("#contactMsg").css( "display", "none" );
-				$("#thankyoumsg").css( "display", "block" );
+				var formValues = {"timestamp": new Date(), "ipAddress": "{{client_ip}}", "referrer": "{{referer}}"};
+
+				$(".form-control").each(function(index,element) {
+					formValues[element.id] = element.value;
+
+					if (!element.value && (element.id !== "inputLocation") && (element.id !== "inputService") && (element.id !== "inputMessage") )
+					{
+					  // google.script.run
+					  //   .withSuccessHandler(setResponse)
+					  //   .getData(a);
+						$("#" + element.id).css( "background-color", "#f7f2d7" );
+						$("#formIncomplete").css( "display", "block" );
+						return true;						
+					}
+				
+					// $("form").css( "display", "none" );
+					// $("#contactMsg").css( "display", "none" );
+					// $("#thankyoumsg").css( "display", "block" );
+
+				});
+
+
+				// onclick="google.script.run.writeForm(this.parentNode)"
+				
 			});
 
 		</script>
