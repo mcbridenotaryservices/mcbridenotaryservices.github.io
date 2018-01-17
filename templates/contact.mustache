@@ -45,8 +45,8 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div id="thankyoumsg" style="display: none;">
-						<p>{{contactUsThxText}}</p>
-						<h5 style="padding-top: 2rem; font-weight: bold;">Please Note:</h5>
+						<p style="font-size: 1.2rem;">{{contactUsThxText}}</p>
+						<h5 style="padding-top: 1.2rem; font-weight: bold;">Please Note:</h5>
 						<p>1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
 						<p>2. Complete all documents prior to appointment except for signatures and dates.</p>
 						<p>3. The person signing the document must appear before the Notary Public.</p>
@@ -54,10 +54,10 @@
 						<p>5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
 					</div>
 					<div id="contactMsg" >
-						<p style="font-size: 1rem;">{{contactUsText}}</p>
+						<p style="font-size: 1.2rem;">{{contactUsText}}</p>
 					</div>
 					<div id="formIncomplete" style="display: none;">
-						<p style="font-size: 1rem; color: red;">Please complete highlighted fields.</p>
+						<p style="font-size: 1.2rem; color: red;">Please complete highlighted fields.</p>
 					</div>
 					<form style="margin-bottom: 2rem;">
 						<div class="form-row">
@@ -168,32 +168,34 @@
 			$("#submitInfo").on( "click", function(event) {
 				event.preventDefault()
 				var formValues = {"timestamp": new Date(), "ipAddress": "", "referrer": ""};
+				var formComplete = true;
 
 				$(".form-control").each(function(index,element) {
 					formValues[element.id] = element.value;
 
 					if ((element.id !== "inputMessage") && ((element.value == "Select Location") || (element.value == "Select Service") || !element.value)) 
 					{
-					  // google.script.run
-					  //   .withSuccessHandler(setResponse)
-					  //   .getData(a);
 						$("#" + element.id).css( "background-color", "#f7f2d7" );
 						$("#formIncomplete").css( "display", "block" );
-						return true;						
+						formComplete = false;
 					}
 					else
 					{
 						$("#" + element.id).css( "background-color", "#fff" );
 					}
-					// $("form").css( "display", "none" );
-					// $("#contactMsg").css( "display", "none" );
-					// $("#thankyoumsg").css( "display", "block" );
-
 				});
 
-
+					if (formComplete) 
+					{
+						$("#formIncomplete").css( "display", "none" );
+						$("form").css( "display", "none" );
+						$("#contactMsg").css( "display", "none" );
+						$("#thankyoumsg").css( "display", "block" );
+					}
 				// onclick="google.script.run.writeForm(this.parentNode)"
-				
+						// google.script.run
+						// .withSuccessHandler(setResponse)
+						// .getData(a);
 			});
 
 		</script>
