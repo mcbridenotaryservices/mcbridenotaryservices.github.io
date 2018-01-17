@@ -59,7 +59,15 @@
 					<div id="formIncomplete" style="display: none;">
 						<p style="font-size: 1.2rem; color: red;">Please complete highlighted fields.</p>
 					</div>
-					<form style="margin-bottom: 2rem;">
+					<div id="email-invalid" style="display: none;">
+						<p style="font-size: 1.2rem; color: red;">Email address is invalid.</p>
+					</div>
+					<form id="gform" style="margin-bottom: 2rem;">
+						<div class="form-row" style="display: none;">
+							<div class="form-group col-md-12">
+								<input type="text" class="form-control" id="honeypot">
+							</div>
+						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<input type="text" class="form-control" id="inputFirstName" placeholder="First Name" >
@@ -164,39 +172,113 @@
 		================ -->
 	
 		<script type="text/javascript">
+			
+			var request; // Variable to hold request
 
-			$("#submitInfo").on( "click", function(event) {
-				event.preventDefault()
-				var formValues = {"timestamp": new Date(), "ipAddress": "", "referrer": ""};
-				var formComplete = true;
+			// Bind to the submit event of our form
+			$("#gform").submit(function(event){
+				
+				event.preventDefault();
+
+				// Abort any pending request
+				if (request) {
+					request.abort();
+				}
+
+				var formData = getFormData();
+
+				if (formData) {
+
+					var $form = $(this);
+					var $inputs = $form.find("input, select, button, textarea"); // Select and cache all the fields
+
+					$inputs.prop("disabled", true); // Disable the inputs for the duration of the Ajax request.
+
+					// Send request to google
+					request = $.ajax({
+						url: "https://script.google.com/macros/s/AKfycbxGqTOOCfXJXI5HD5GxQfz7Cns9Pu4CElwrDDp0r8v8Ur5kefxq/exec",
+						type: "post",
+						data: formData
+					});
+
+					// Callback handler that will be called on success
+					request.done(function (response, textStatus, jqXHR){
+						// Log a message to the console
+						console.log("Data successfully transmitted.");
+
+						$("#formIncomplete").css( "display", "none" );
+						$("#email-invalid").css( "display", "none" );
+						$("form").css( "display", "none" );
+						$("#contactMsg").css( "display", "none" );
+						$("#thankyoumsg").css( "display", "block" );
+
+					});
+
+					// Callback handler that will be called on failure
+					request.fail(function (jqXHR, textStatus, errorThrown){
+						// Log the error to the console
+						console.error(
+						"The following error occurred: "+
+						textStatus, errorThrown
+						);
+					});
+
+					// Callback handler that will be called regardless
+					// if the request failed or succeeded
+					request.always(function () {
+					// Reenable the inputs
+						$inputs.prop("disabled", false);
+					});
+				}
+
+			});
+
+			function getFormData() {
+				var form = document.getElementById("gform")
+				var data = {"timestamp": new Date(), "ipAddress": "", "referrer": "", "response": ""};
 
 				$(".form-control").each(function(index,element) {
-					formValues[element.id] = element.value;
+					data[element.id] = element.value;
 
 					if ((element.id !== "inputMessage") && ((element.value == "Select Location") || (element.value == "Select Service") || !element.value)) 
 					{
 						$("#" + element.id).css( "background-color", "#f7f2d7" );
 						$("#formIncomplete").css( "display", "block" );
-						formComplete = false;
+						return false;
 					}
 					else
 					{
 						$("#" + element.id).css( "background-color", "#fff" );
+
+
+						if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
+							return false;
+						}
+
+						if( !validEmail(data.inputEmail) ) {   // if email is not valid show error
+							document.getElementById('email-invalid').style.display = 'block';
+							return false;
+						}
 					}
 				});
 
-					if (formComplete) 
-					{
-						$("#formIncomplete").css( "display", "none" );
-						$("form").css( "display", "none" );
-						$("#contactMsg").css( "display", "none" );
-						$("#thankyoumsg").css( "display", "block" );
-					}
-				// onclick="google.script.run.writeForm(this.parentNode)"
-						// google.script.run
-						// .withSuccessHandler(setResponse)
-						// .getData(a);
-			});
+				// console.log(data);
+				return data;
+			}
+
+
+			function validEmail(email) { // see:
+				var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+				return re.test(email);
+			}
+
+
+			function validateHuman(honeypot) {
+				if (honeypot) {  //if hidden form filled up
+					console.log("Robot Detected!");
+					return true;
+				}
+			}
 
 		</script>
 
