@@ -45,7 +45,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div id="thankyoumsg" style="display: none;">
-						<p style="font-size: 1.2rem;">{{contactUsThxText}}</p>
+						<p style="font-size: 1rem;">{{contactUsThxText}}</p>
 						<h5 style="padding-top: 1.2rem; font-weight: bold;">Please Note:</h5>
 						<p>1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
 						<p>2. Complete all documents prior to appointment except for signatures and dates.</p>
@@ -54,20 +54,15 @@
 						<p>5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
 					</div>
 					<div id="contactMsg" >
-						<p style="font-size: 1.2rem;">{{contactUsText}}</p>
+						<p style="font-size: 1rem;">{{contactUsText}}</p>
 					</div>
 					<div id="formIncomplete" style="display: none;">
-						<p style="font-size: 1.2rem; color: red;">Please complete highlighted fields.</p>
+						<p style="font-size: 1rem; color: red;">Please complete highlighted fields.</p>
 					</div>
 					<div id="email-invalid" style="display: none;">
-						<p style="font-size: 1.2rem; color: red;">Email address is invalid.</p>
+						<p style="font-size: 1rem; color: red;">Email address is invalid.</p>
 					</div>
 					<form id="gform" style="margin-bottom: 2rem;">
-						<div class="form-row" style="display: none;">
-							<div class="form-group col-md-12">
-								<input type="text" class="form-control" id="honeypot">
-							</div>
-						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<input type="text" class="form-control" id="inputFirstName" placeholder="First Name" >
@@ -136,15 +131,15 @@
 							<img alt="Insta Logo" target="_blank" style="height: 25px;" src="./images/linkedin_logo_128_blk.png" />
 						</div>
 						<div class="col-10">
-							<a href="{{{link_Linkedin}}}" target="_blank" style="color: #343a40; font-weight: bold;"></span>LinkedIn Profile</a>
+							<a href="{{{link_Linkedin}}}" target="_blank" style="color: #343a40; font-weight: bold;"></span>LinkedIn</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
 						<div class="col-2">
-							<img alt="Twitter Logo" style="height: 25px;" src="./images/twitter_logo_128_blk.png" />
+							<img alt="Facebook Logo" style="height: 25px;" src="./images/FB-f-Logo__black_114.png" />
 						</div>
 						<div class="col-10">
-							<a href="{{{link_Twitter}}}" target="_blank" style="color: #343a40; font-weight: bold;"></span>{{twitterHandle}}</a>
+							<a href="{{{link_Facebook}}}" target="_blank" style="color: #343a40; font-weight: bold;"></span>Facebook</a>
 						</div>
 					</div>
 				</div>
@@ -172,12 +167,14 @@
 		================ -->
 	
 		<script type="text/javascript">
-			
-			var request; // Variable to hold request
+
+			// Variable to hold request
+			var request;
 
 			// Bind to the submit event of our form
 			$("#gform").submit(function(event){
-				
+
+				// Prevent default posting of form - put here to work in case of errors
 				event.preventDefault();
 
 				// Abort any pending request
@@ -185,16 +182,26 @@
 					request.abort();
 				}
 
+
 				var formData = getFormData();
 
-				if (formData) {
+				if (formData.formComplete) {
+					// setup some local variables
+					if( !validEmail(formData.inputEmail) ) {   // if email is not valid show error
+						$("#email-invalid").css( "display", "block" );
+						return false;
+					}
 
 					var $form = $(this);
-					var $inputs = $form.find("input, select, button, textarea"); // Select and cache all the fields
 
-					$inputs.prop("disabled", true); // Disable the inputs for the duration of the Ajax request.
+					var $inputs = $form.find("input, select, button, textarea"); // Let's select and cache all the fields
 
-					// Send request to google
+					// Disable the inputs for the duration of the Ajax request.
+					// Note: we disable elements AFTER the form data has been serialized.
+					// Disabled form elements will not be serialized.
+					$inputs.prop("disabled", true);
+
+					// Fire off the request to /form.php
 					request = $.ajax({
 						url: "https://script.google.com/macros/s/AKfycbxGqTOOCfXJXI5HD5GxQfz7Cns9Pu4CElwrDDp0r8v8Ur5kefxq/exec",
 						type: "post",
@@ -207,7 +214,6 @@
 						console.log("Data successfully transmitted.");
 
 						$("#formIncomplete").css( "display", "none" );
-						$("#email-invalid").css( "display", "none" );
 						$("form").css( "display", "none" );
 						$("#contactMsg").css( "display", "none" );
 						$("#thankyoumsg").css( "display", "block" );
@@ -235,7 +241,10 @@
 
 			function getFormData() {
 				var form = document.getElementById("gform")
-				var data = {"timestamp": new Date(), "ipAddress": "", "referrer": "", "response": ""};
+				var data = {"timestamp": new Date(), "ipAddress": "", "referrer": "", "response": "", "formComplete": true};
+
+				$("#formIncomplete").css( "display", "none" );
+				$("#email-invalid").css( "display", "none" );
 
 				$(".form-control").each(function(index,element) {
 					data[element.id] = element.value;
@@ -244,25 +253,16 @@
 					{
 						$("#" + element.id).css( "background-color", "#f7f2d7" );
 						$("#formIncomplete").css( "display", "block" );
-						return false;
+						data["formComplete"] = false;
 					}
 					else
 					{
 						$("#" + element.id).css( "background-color", "#fff" );
-
-
-						if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
-							return false;
-						}
-
-						if( !validEmail(data.inputEmail) ) {   // if email is not valid show error
-							document.getElementById('email-invalid').style.display = 'block';
-							return false;
-						}
+						
 					}
 				});
 
-				// console.log(data);
+				console.log(data);
 				return data;
 			}
 
@@ -270,14 +270,6 @@
 			function validEmail(email) { // see:
 				var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 				return re.test(email);
-			}
-
-
-			function validateHuman(honeypot) {
-				if (honeypot) {  //if hidden form filled up
-					console.log("Robot Detected!");
-					return true;
-				}
 			}
 
 		</script>
