@@ -9,6 +9,7 @@
 
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/sticky-footer-navbar.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="./images/Logo2_Black.png">
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,15 +17,22 @@
 
 
 		<meta name="description" content="McBride Notary Services">
-		<meta name="author" content="Karen McBride">
+		<meta name="author" content="Karen J. A. McBride">
+
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 		<!-- ===============
 			END Page Head Info
 		================ -->
 
+		<style type="text/css"> 
+			.navbar-expand-lg .navbar-nav .nav-link {padding-right: 3rem; padding-left: 3rem;}
+			h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight: 400;}
+    	</style>
+
 	</head>
 
-	<body>
+	<body style="padding-bottom: 3.5rem;">
 
 		<!-- ===============
 			Page Header
@@ -33,50 +41,65 @@
     <header class="fixed-top" style="background-color: #fff; height: 30px; padding-top: 3px;">
       <div class="container">
         <div class="row">
-          <div class="col-9 text-left">
-            <a href="tel:+1-416-919-5273" style="color: #343a40; font-weight: bold;"><span class="glyphicon glyphicon-phone" aria-hidden="true" style="color: #343a40;"></span> Call/Text 416.919.5273</a>
-          </div>
-          <div class="col-3 text-right">
-            <a style="padding: 0; color: #343a40; padding-right: .5rem;" href="#">Français</a>
+          <div class="col-12 d-sm-block d-md-none text-center">
+            <a href="tel:+1-416.919.5273" style="color: #343a40; font-weight: bold;"><span class="glyphicon glyphicon-phone" aria-hidden="true" style="color: #343a40;"></span> Call or Text 416.919.5273</a>
           </div>
         </div>
       </div>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="top: 30px;">
-      <div class="container d-flex justify-content-between">
-        <a class="navbar-brand" href="index.html" style="padding-left: 0px; margin-right: 0px; font-size: 1.1rem;"><span style="font-family: 'Playfair Display', sans-serif; font-weight: bold; color: #fff;">MNS</span> | McBride Notary Services</a>
-        <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav" style="margin-left: auto;">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="locations.html">Locations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Services & Fees</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
+    	<div class="container">
+			<div class="collapse navbar-collapse justify-content-center navContent d-none d-lg-block">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="locations.html">Locations</a>
+					</li>
+				</ul>
+			</div>        
+			<a class="navbar-brand" href="index.html" style="margin-right: 0;">
+				<img src="./images/logoFull_White_1000x264.png" height="60" alt="">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-center navContent">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link d-md-block d-lg-none" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link d-md-block d-lg-none" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link d-md-block d-lg-none" href="locations.html">Locations</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="services.html">Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Français</a>
+					</li>
+				</ul>
+			</div>
 
-        <button class="navbar-toggler" style="font-size: 1.1rem;" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
+		</div>
     </nav>
 
     <script>
     (function() {
       var currentPage = window.location.pathname.split("/").pop();
 
-      document.querySelector("#navbarContent a[href='" + currentPage + "']")
+      document.querySelector(".navContent a[href='" + currentPage + "']")
       .className = "nav-link active";
     }())
     </script>
@@ -86,94 +109,100 @@
 		================ -->
 
 
-		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 97px;">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 135px;">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="first-slide d-block w-100" src="./images/headerContactUs.png" alt="First slide">
+					<img class="first-slide d-block w-100" src="./images/headerContact_1900x300.png" alt="First slide">
 				<!--             ref: https://www.pexels.com -->
 				</div>
 			</div>
 		</div>
 
-		<div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
-			<h3 class="display-4" style="margin-bottom: 20px;">Contact Us</h3>
+		<div class="container" style="padding-top: 3rem;">
+			<h3 class="display-4" style="font-size: 3rem; margin-bottom: 1.5rem;">Contact Us</h3>
 			<div class="row">
 				<div class="col-md-6">
-					<p style="font-size: 1rem;">If you would like to book an appointment or have any questions about our services, please complete the form below. Appointments are available days, evenings and weekends, and on urgent or short notice.</p>
-				</div>
-				<div class="col-md-6">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<form style="margin-bottom: 2rem;">
+					<div id="thankyoumsg" style="display: none;">
+						<p style="font-size: 1rem;">Thank you for your enquiry. You will be contacted within 24 hours.</p>
+						<h5 style="padding-top: 1.2rem; font-weight: bold;">Please Note:</h5>
+						<p>1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
+						<p>2. Complete all documents prior to appointment except for signatures and dates.</p>
+						<p>3. The person signing the document must appear before the Notary Public.</p>
+						<p>4. For certified copies of documents, please bring the original document and the photocopy.</p>
+						<p>5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
+					</div>
+					<div id="contactMsg" >
+						<p style="font-size: 1rem;">If you would like to book an appointment or have any questions about our services, please complete the form below.</p>
+					</div>
+					<div id="formIncomplete" style="display: none;">
+						<p style="font-size: 1rem; color: red;">Please complete the highlighted fields.</p>
+					</div>
+					<div id="email-invalid" style="display: none;">
+						<p style="font-size: 1rem; color: red;">Email address is invalid.</p>
+					</div>
+					<form id="gform">
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<input type="text" class="form-control" id="inputFirstName" placeholder="First Name" style="background-color: #f3f4f5;">
+								<input type="text" class="form-control" id="inputFirstName" placeholder="First Name" >
 							</div>
 							<div class="form-group col-md-6">
-								<input type="text" class="form-control" id="inputLastName" placeholder="Last Name" style="background-color: #f3f4f5;">
+								<input type="text" class="form-control" id="inputLastName" placeholder="Last Name" >
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<input type="text" class="form-control" id="inputPhone" placeholder="Phone Number" style="background-color: #f3f4f5;">
+								<input type="text" class="form-control" id="inputPhone" placeholder="Phone Number" >
 							</div>
 							<div class="form-group col-md-6">
-								<input type="email" class="form-control" id="inputEmail" placeholder="Email" style="background-color: #f3f4f5;">
+								<input type="email" class="form-control" id="inputEmail" placeholder="Email" >
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<select id="inputLocation" class="form-control" style="background-color: #f3f4f5;">
-									<option selected>Select Location</option>
+								<select id="inputLocation" class="form-control" >
+									<option selected>Preferred Location</option>
 									<option>London West</option>
 									<option>London East</option>
+									<option>Mobile Services</option>
 								</select>
 							</div>
 							<div class="form-group col-md-6">
-								<input type="text" class="form-control" id="inputApptDate" placeholder="Preferred Date" style="background-color: #f3f4f5;">
+								<input type="text" name="date" class="form-control" id="datepicker" placeholder="Preferred Date" >
 							</div>							
 						</div>
 						<div class="form-group">
-							<select id="inputService" class="form-control" style="background-color: #f3f4f5;">
+							<select id="inputService" class="form-control" >
 								<option selected>Select Service</option>
-								<option>Commission of Oaths</option>
-								<option>Letter of Invitation</option>
-								<option>Notarization of Document</option>
-								<option>Passport Application</option>
-								<option>Permission to Travel with a Minor</option>
-								<option>Professional Applications</option>
-								<option>Proof of Loss Document</option>
-								<option>Statutory Declaration</option>
-								<option>Swearing Affidavit</option>
-								<option>Witnessing Signature</option>
-								<option>Other</option>
+                  					<option>Commission of Oaths</option>
+                  					<option>Letter of Invitation</option>
+                  					<option>Notarization of Document</option>
+                  					<option>Passport Application</option>
+                  					<option>Permission to Travel with a Minor</option>
+                  					<option>Professional Applications</option>
+                  					<option>Proof of Loss Document</option>
+                  					<option>Statutory Declaration</option>
+                  					<option>Swearing Affidavit</option>
+                  					<option>Witnessing Signature</option>
+                  					<option>Other</option>
 							</select>
 						</div>
 						<div class="form-group">
-							<textarea class="form-control" id="inputMessage" rows="3" placeholder="Message" style="background-color: #f3f4f5;"></textarea>
-						</div>
-						<p style="font-size: .8rem; line-height: 1.5;">To safeguard your personal information, please do not include any confidential or sensitive information in your message.</p>
+							<textarea class="form-control" id="inputMessage" rows="3" maxlength="250" placeholder="Message" ></textarea>
+							<div id="textRemaining" class="text-right">250 characters remaining</div>						</div>
+						<p style="font-size: 1rem; line-height: 1.5;">To safeguard your personal information, please do not include any confidential or sensitive information in your message.</p>
+						
 						<button type="submit" class="btn btn-primary btn-block" id="submitInfo">Request Appointment</button>
 					</form>
-
-					<div class="row" id="thankyoumsg" style="display: none;">
-						<div class="col-12">
-							<p>Thank you for your request.</p>
-						</div>
-					</div>
 				</div>
-
 				<div class="col-md-1">
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3"  style="padding-top: 6.5rem;">
 					<div class="row" style="padding-bottom: 2rem;">
 						<div class="col-2">
 							<span class="glyphicon glyphicon-phone" aria-hidden="true" style="color: #000; font-size: 1.5rem;">
 						</div>
 						<div class="col-10">
-							<a href="tel:+1-416-919-5273" style="color: #343a40; font-weight: bold;"></span>416.919.5273</a>
+							<a href="tel:+1-416.919.5273" style="color: #343a40; font-weight: bold;"></span>416.919.5273</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -181,7 +210,7 @@
 							<span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: #000; padding-right: 1rem; font-size: 1.5rem;">
 						</div>
 						<div class="col-10">
-							<a href="mailto:kmcbr072@gmail.com?Subject=Notary%20Services" target="_top" style="color: #343a40; font-weight: bold;"></span>kmcbr072@gmail.com</a>
+							<a href="mailto:karen@mcbridenotaryservices.ca?Subject=Notary%20Services" target="_top" style="color: #343a40; font-weight: bold;"></span>karen@mcbridenotaryservices.ca</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -189,57 +218,36 @@
 							<img alt="Insta Logo" target="_blank" style="height: 25px;" src="./images/linkedin_logo_128_blk.png" />
 						</div>
 						<div class="col-10">
-							<a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank" style="color: #343a40; font-weight: bold;"></span>LinkedIn Profile</a>
+							<a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank" style="color: #343a40; font-weight: bold;"></span>LinkedIn</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
 						<div class="col-2">
-							<img alt="Twitter Logo" style="height: 25px;" src="./images/twitter_logo_128_blk.png" />
+							<img alt="Facebook Logo" style="height: 25px;" src="./images/FB-f-Logo__black_114.png" />
 						</div>
 						<div class="col-10">
-							<a href="#" target="_blank" style="color: #343a40; font-weight: bold;"></span>@twitter</a>
-						</div>
-					</div>
-					<div class="row" style="padding-bottom: 2rem;">
-						<div class="col-2">
-							<img alt="Insta Logo" style="height: 25px;" src="./images/glyph-logo_May2016.png" />
-						</div>
-						<div class="col-10">
-							<a href="https://www.instagram.com/karenjmcbride/" target="_blank" style="color: #343a40; font-weight: bold;">@karenjmcbride</a>
+							<a href="#" target="_blank" style="color: #343a40; font-weight: bold;"></span>Facebook</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-<!-- 		<div class="container" style="padding-bottom: 3rem; padding-top: 2rem;">
-			<div class="row">
-				<h5>Please Note:</h5>
-				<p>1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
-				<p>2. Complete all documents prior to appointment except for signatures and dates.</p>
-				<p>3. The person signing the document must appear before the Notary Public.</p>
-				<p>4. For certified copies of documents, please bring the original documents and the photocopy.</p>
-				<p>5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
-			</div>
-		</div> -->
-
-
 		<!-- ===============
 		   Page Footer
 		================ -->
 
-    <footer class="footer" style="height: 135px;">
-      <div class="container" style="text-align: center;">
-        <div class="row" style="padding-top:20px; padding-bottom:5px;">
-          <ul class="list-inline" style="margin-left: auto; margin-right: auto;">
-            <li class="list-inline-item" style="padding: 0 30px;"><a href="https://www.instagram.com/karenjmcbride/" target="_blank"><img alt="Instagram Logo" style="height: 40px;" src="./images/instagram_logo_128.png" /></a></li>
-            <li class="list-inline-item" style="padding: 0 30px;"><a href="#"><img alt="Twitter Logo" style="height: 40px;" src="./images/twitter_logo_128.png" /></a></li>
-            <li class="list-inline-item" style="padding: 0 30px;"><a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank"><img alt="Insta Logo" style="height: 40px;" src="./images/linkedin_logo_128.png" /></a></li>
-          </ul>
+      <footer class="footer" style="height: 135px;">
+        <div class="container" style="text-align: center;">
+          <div class="row" style="padding-top:20px; padding-bottom:5px;">
+            <ul class="list-inline" style="margin-left: auto; margin-right: auto;">
+              <li class="list-inline-item" style="padding: 0 30px;"><a href="#" target="_blank"><img alt="Facebook Logo" style="height: 40px;" src="./images/FB-f-Logo__white_114.png" /></a></li>
+              <li class="list-inline-item" style="padding: 0 30px;"><a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank"><img alt="Linkedin Logo" style="height: 40px;" src="./images/linkedin_logo_128.png" /></a></li>
+            </ul>
+          </div>
+          <p>McBride Notary Services &copy; 2017</p>
         </div>
-        <p>McBride Notary Services &copy; 2017</p>
-      </div>
-    </footer>
+      </footer>
 
 		<!-- ===============
 		   END Page Footer
@@ -253,36 +261,137 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="./js/jquery.min.js"></script>
 		<script type="text/javascript" src="./js/bootstrap.js"></script>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+		
 		<!-- ===============
 		   END Page Script Info
 		================ -->
 	
 		<script type="text/javascript">
 
-			$("#submitInfo").on( "click", function() {
+			$("#datepicker").datepicker();
 
-				var formValues = {"timestamp": new Date(), "ipAddress": "", "referrer": ""};
+			// Variable to hold request
+			var request;
+
+			// Bind to the submit event of our form
+			$("#gform").submit(function(event){
+
+				// Prevent default posting of form - put here to work in case of errors
+				event.preventDefault();
+
+				// Abort any pending request
+				if (request) {
+					request.abort();
+				}
+
+				var formData = getFormData();
+
+				if (formData.formComplete) {
+					// setup some local variables
+					if( !validEmail(formData.inputEmail) ) {   // if email is not valid show error
+						$("#email-invalid").css( "display", "block" );
+						return false;
+					}
+
+					var $form = $(this);
+
+					var $inputs = $form.find("input, select, button, textarea"); // Let's select and cache all the fields
+
+					// Disable the inputs for the duration of the Ajax request.
+					// Note: we disable elements AFTER the form data has been serialized.
+					// Disabled form elements will not be serialized.
+					$inputs.prop("disabled", true);
+
+					// Fire off the request to /form.php
+					request = $.ajax({
+						url: "https://script.google.com/macros/s/AKfycbxGqTOOCfXJXI5HD5GxQfz7Cns9Pu4CElwrDDp0r8v8Ur5kefxq/exec",
+						type: "post",
+						data: formData
+					});
+
+					// Callback handler that will be called on success
+					request.done(function (response, textStatus, jqXHR){
+						// Log a message to the console
+						console.log("Data successfully transmitted.");
+
+						$("#formIncomplete").css( "display", "none" );
+						$("form").css( "display", "none" );
+						$("#contactMsg").css( "display", "none" );
+						$("#thankyoumsg").css( "display", "block" );
+
+					});
+
+					// Callback handler that will be called on failure
+					request.fail(function (jqXHR, textStatus, errorThrown){
+						// Log the error to the console
+						console.error(
+						"The following error occurred: "+
+						textStatus, errorThrown
+						);
+					});
+
+					// Callback handler that will be called regardless
+					// if the request failed or succeeded
+					request.always(function () {
+					// Reenable the inputs
+						$inputs.prop("disabled", false);
+					});
+				}
+
+			});
+
+			function getFormData() {
+				var form = document.getElementById("gform")
+				var data = {"timestamp": new Date(), "ipAddress": "", "referrer": "", "response": "", "formComplete": true};
+
+				$("#formIncomplete").css( "display", "none" );
+				$("#email-invalid").css( "display", "none" );
 
 				$(".form-control").each(function(index,element) {
-					formValues[element.id] = element.value;
+					data[element.id] = element.value;
+
+					if ((element.id !== "inputMessage") && ((element.value == "Preferred Location") || (element.value == "Select Service") || !element.value)) 
+					{
+						$("#" + element.id).css( "background-color", "#f7f2d7" );
+						$("#formIncomplete").css( "display", "block" );
+						data["formComplete"] = false;
+					}
+					else
+					{
+						$("#" + element.id).css( "background-color", "#fff" );
+						
+					}
 				});
 
-				function successFunction(data, codeString) {console.log("success handler: " + codeString);}
-				function errorFunction(data, errorState, errorReason) {console.log("error " + errorReason);}
-				
-				$.ajax({
-					method: 'put',
-					url: "/sheet/MNSTest/row",
-					data: JSON.stringify(formValues),
-					processData: false,
-					contentType: "application/json",
-					success: successFunction,
-					error: errorFunction
+				console.log(data);
+				return data;
+			}
+
+
+			function validEmail(email) { // see:
+				var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+				return re.test(email);
+			}
+
+			$(document).ready(function () {
+
+				$('#inputMessage').keypress(function (event) {
+					var max = 250;
+					var len = $(this).val().length;
+
+					if (len >= max) {
+						event.preventDefault();
+					}
 				});
-			
-				$("form").css( "display", "none" );
-				$("#thankyoumsg").css( "display", "block" );
+
+			  $('#inputMessage').keyup(function (event) {
+					var max = 250;
+					var len = $(this).val().length;
+					var char = max - len;
+
+					$('#textRemaining').text(char + ' characters remaining');
+				});
 
 			});
 
