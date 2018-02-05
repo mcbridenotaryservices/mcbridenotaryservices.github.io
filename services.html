@@ -48,11 +48,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="top: 30px;">
     	<div class="container">
-			<div class="collapse navbar-collapse justify-content-center navContent d-none d-lg-block">
+			<div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
 				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="index.html">Home</a>
-					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="about.html">About</a>
 					</li>
@@ -64,14 +61,13 @@
 			<a class="navbar-brand" href="index.html" style="margin-right: 0;">
 				<img src="./images/logoFull_White_1000x264.png" height="60" alt="">
 			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse justify-content-center navContent">
+
+
+			<div class="collapse navbar-collapse justify-content-center" id="navContent">
 				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link d-md-block d-lg-none" href="index.html">Home</a>
-					</li>
 					<li class="nav-item">
 						<a class="nav-link d-md-block d-lg-none" href="about.html">About</a>
 					</li>
@@ -83,9 +79,6 @@
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="contact.html">Contact</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Français</a>
 					</li>
 				</ul>
 			</div>
@@ -109,8 +102,7 @@
 		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 135px;">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="first-slide d-block w-100" src="./images/headerPlaceHolder.png" alt="First slide">
-				<!--             ref: https://www.pexels.com -->
+					<img class="first-slide d-block w-100" src="./images/-81.jpg" alt="First slide">
 				</div>
 			</div>
 		</div>
@@ -131,19 +123,21 @@
 					<p>Letter of Invitation</p>
 					<p>Notarization of Articles of Incorporation</p>
 					<p>Notarization of Documents</p>
-					<p>Permission to Travel with a Minor</p>
 					<p>Professional Applications</p>
 					<p>Proof of Loss Documents</p>
 					<p>Statutory Declaration of Marital Status</p>
+					<p>Statutory Declaration to Change Name</p>
 				</div>
 				<div class="col-md-4">
-					<p>Statutory Declaration to Change Name</p>
 					<p>Statutory Declarations</p>
 					<p>Statutory Declarations for Passports</p>
 					<p>Swearing Affidavits</p>
-					<p>Travel Consent</p>
+					<p>Travel Consent Letter**</p>
 					<p>Witnessing Signatures</p>
 				</div>
+			</div>
+			<div class="row justify-content-center" style="margin-top: 1rem;">
+				<p style="font-size: .8rem;">** See the Government of Canada's website for more information: <span><a target="_blank" href="https://travel.gc.ca/travelling/children/consent-letter">https://travel.gc.ca/travelling/children/consent-letter</a></span></p>
 			</div>
 
 			<div class="row justify-content-center" style="padding-top: 2rem; margin-bottom: 4rem;">
@@ -188,14 +182,23 @@
 		================ -->
 
       <footer class="footer" style="height: 135px;">
-        <div class="container" style="text-align: center;">
-          <div class="row" style="padding-top:20px; padding-bottom:5px;">
-            <ul class="list-inline" style="margin-left: auto; margin-right: auto;">
-              <li class="list-inline-item" style="padding: 0 30px;"><a href="#" target="_blank"><img alt="Facebook Logo" style="height: 40px;" src="./images/FB-f-Logo__white_114.png" /></a></li>
-              <li class="list-inline-item" style="padding: 0 30px;"><a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank"><img alt="Linkedin Logo" style="height: 40px;" src="./images/linkedin_logo_128.png" /></a></li>
-            </ul>
+        <div class="container">
+          <div class="row" style="padding-top:15px;">
+	          <div class="col-6">
+	          		<img src="./images/logoFull_White_1000x264.png" height="35" alt="">
+	          </div>
+	          <div class="col-6 text-right">
+		            <ul class="list-inline" style="margin-left: auto; margin-right: auto;">
+		              <li class="list-inline-item" style="padding: 0 5px;"><a href="#" target="_blank"><img alt="Facebook Logo" style="height: 30px;" src="./images/FB-f-Logo__white_114.png" /></a></li>
+		              <li class="list-inline-item" style="padding: 0 5px;"><a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank"><img alt="Linkedin Logo" style="height: 30px;" src="./images/linkedin_logo_128.png" /></a></li>
+		            </ul>
+              </div>
           </div>
-          <p>McBride Notary Services &copy; 2017</p>
+          <div class="row">
+          	<div class="col-12">
+          		<p style="font-size: .8rem; line-height: 1.25; margin-top: 0;">McBride Notary Services is not your legal advisor. No solicitor-client relationship has been established. The information contained in this website is for general information purposes only. If you require legal advice, please consult a lawyer who can advise you according to your specific legal needs.</p>
+          	</div>
+          </div>
         </div>
       </footer>
 

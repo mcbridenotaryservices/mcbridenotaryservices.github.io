@@ -7,17 +7,22 @@
 			Page Head Info
 		================ -->		
 
-<!-- 		<link href="css/bootstrap.css" rel="stylesheet">
-		<link href="css/sticky-footer-navbar.css" rel="stylesheet">
+		<link href="./css/bootstrap.css" rel="stylesheet">
+		<link href="./css/bootstrap-grid.css" rel="stylesheet">
+		<link href="./css/bootstrap-reboot.css" rel="stylesheet">
+
+		<link href="./css/sticky-footer-navbar.css" rel="stylesheet">
+
 		<link rel="icon" type="image/png" href="./images/Logo2_Black.png">
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="mobileoptimized" content="0" />
 
 
 		<meta name="description" content="McBride Notary Services">
-		<meta name="author" content="Karen J. A. McBride"> -->
+		<meta name="author" content="Karen J. A. McBride">
 
 
 		<!-- ===============
@@ -27,6 +32,7 @@
 		<style type="text/css"> 
 			.navbar-expand-lg .navbar-nav .nav-link {padding-right: 3rem; padding-left: 3rem;}
 			h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight: 400;}
+			 @-ms-viewport {width: device-width;}
     	</style>
 
 
@@ -34,7 +40,226 @@
 
 	<body>
 
+		<!-- ===============
+			Page Header
+		================ -->
 
+    <header class="fixed-top" style="background-color: #fff; height: 30px; padding-top: 3px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 d-sm-block d-md-none text-center">
+            <a href="tel:+1-416.919.5273" style="color: #343a40; font-weight: bold;"><span class="glyphicon glyphicon-phone" aria-hidden="true" style="color: #343a40;"></span> Call or Text 416.919.5273</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="top: 30px;">
+    	<div class="container">
+			<div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="locations.html">Locations</a>
+					</li>
+				</ul>
+			</div>        
+			<a class="navbar-brand" href="index.html" style="margin-right: 0;">
+				<img src="./images/logoFull_White_1000x264.png" height="60" alt="">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+
+			<div class="collapse navbar-collapse justify-content-center" id="navContent">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link d-md-block d-lg-none" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link d-md-block d-lg-none" href="locations.html">Locations</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="services.html">Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+    </nav>
+
+    <script>
+    (function() {
+      var currentPage = window.location.pathname.split("/").pop();
+
+      document.querySelector(".navContent a[href='" + currentPage + "']")
+      .className = "nav-link active";
+    }())
+    </script>
+
+			<!-- ===============
+				END Page Header
+			================ -->
+
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 135px;">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="first-slide d-block w-100" src="./images/-88.jpg" alt="First slide">
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container" style="margin-top: 1rem; padding-top: 3rem; margin-bottom: 2rem;">
+			<h3 class="display-4 text-center" style="margin-bottom: 0px; font-size: 3rem; margin-bottom: .75rem;">Services</h3>
+			<p class="lead" style="margin: 0px 0px .5rem; margin-bottom: 1.5rem;">Mcbride Notary Services offers professional notary services at an affordable rate.  All of our services are offered in English or French.</p>
+
+			<div class="row">
+				<div class="col-md-4" style="margin-bottom: 2rem;">
+					<div class="card text-center">
+						<img class="card-img-top" src="./images/Testimage.jpg" alt="Card image cap">
+						<div class="card-body">
+							<h4 class="card-title" style="font-weight: 200; margin-bottom: 2rem;">Notarizing Documents</h4>
+							<a href="contact.html" class="btn btn-secondary">Request Appointment</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4" style="margin-bottom: 2rem;">
+					<div class="card text-center">
+						<img class="card-img-top" src="./images/Testimage2.jpg" alt="Card image cap">
+						<div class="card-body">
+							<h4 class="card-title" style="font-weight: 200; margin-bottom: 2rem;">Passport Applications</h4>
+							<a href="contact.html" class="btn btn-secondary">Request Appointment</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4" style="margin-bottom: 2rem;">
+					<div class="card text-center">
+						<img class="card-img-top" src="./images/Testimage3.jpg" alt="Card image cap">
+						<div class="card-body">
+							<h4 class="card-title" style="font-weight: 200; margin-bottom: 2rem;">Swearing Affidavits</h4>
+							<a href="contact.html" class="btn btn-secondary">Request Appointment</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4" style="margin-bottom: 2rem;">
+					<div class="card text-center">
+						<img class="card-img-top" src="./images/services1.jpg" alt="Certified True Copies">
+						<div class="card-body">
+							<h4 class="card-title" style="font-weight: 200; margin-bottom: 2rem;">Certified True Copies</h4>
+							<a href="contact.html" class="btn btn-secondary">Request Appointment</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4" style="margin-bottom: 2rem;">
+					<div class="card text-center">
+						<img class="card-img-top" src="./images/services2.jpg" alt="Statutory Declarations">
+						<div class="card-body">
+							<h4 class="card-title" style="font-weight: 200; margin-bottom: 2rem;">Statutory Declarations</h4>
+							<a href="contact.html" class="btn btn-secondary">Request Appointment</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4" style="margin-bottom: 2rem;">
+					<div class="card text-center">
+						<img class="card-img-top" src="./images/services3_450x273.jpg" alt="Witnessing Signatures">
+						<div class="card-body">
+							<h4 class="card-title" style="font-weight: 200; margin-bottom: 2rem;">Witnessing Signatures</h4>
+							<a href="contact.html" class="btn btn-secondary">Request Appointment</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center" style="margin-bottom: 3rem;">
+				<a class="btn btn-outline-secondary" href="services.html" role="button">Browse All Services</a>
+			</div>
+			<hr style="margin: 20px 0;">
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<figure class="figure">
+						<img src="./images/headShotBio_645x959.jpg" class="figure-img img-fluid rounded" alt="Karen McBride" />
+					</figure>
+				</div>
+				<div class="col-md-10">
+					<h2 style="margin-bottom: 2rem;">Karen J. A. McBride <span style="color: #9e9d9d;">| Lawyer, Notary Public</span></h2> 
+					<p class="lead" style="font-size: 1.2rem">Karen McBride received her call to the Bar of Ontario in June 2007, after earning her Bachelor of Laws degree from the University of Ottawa in 2006. She earned a Bachelor of Arts (Honours) degree in English Literature from Wilfrid Laurier University in 2003.</p>
+				</div>
+			</div>
+			<div class="row justify-content-center" style="margin-bottom: 3rem;">
+				<a class="btn btn-outline-secondary" href="about.html" role="button">See Full Biography</a>
+			</div>			
+			<hr style="margin: 20px 0;">
+		</div>
+
+		<div class="jumbotron jumbotron-fluid" style="background-color: #ededf1; margin: 0px; padding-top: 1rem;">
+			<div class="container" style="margin-top: 2rem; margin-bottom: 3rem;">
+				<h3 class="display-4" style="font-size: 3rem;">Testimonials</h3>
+				<div class="row">
+					<div class="col-12">
+						<blockquote class="blockquote">
+							<p>I booked a same day appointment with Karen to notarize documents.  She was down to earth, professional and fast.</p>
+							<footer class="blockquote-footer">J.P.</footer>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ===============
+		   Page Footer
+		================ -->
+
+      <footer class="footer" style="height: 135px;">
+        <div class="container">
+          <div class="row" style="padding-top:15px;">
+	          <div class="col-6">
+	          		<img src="./images/logoFull_White_1000x264.png" height="35" alt="">
+	          </div>
+	          <div class="col-6 text-right">
+		            <ul class="list-inline" style="margin-left: auto; margin-right: auto;">
+		              <li class="list-inline-item" style="padding: 0 5px;"><a href="#" target="_blank"><img alt="Facebook Logo" style="height: 30px;" src="./images/FB-f-Logo__white_114.png" /></a></li>
+		              <li class="list-inline-item" style="padding: 0 5px;"><a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank"><img alt="Linkedin Logo" style="height: 30px;" src="./images/linkedin_logo_128.png" /></a></li>
+		            </ul>
+              </div>
+          </div>
+          <div class="row">
+          	<div class="col-12">
+          		<p style="font-size: .8rem; line-height: 1.25; margin-top: 0;">McBride Notary Services is not your legal advisor. No solicitor-client relationship has been established. The information contained in this website is for general information purposes only. If you require legal advice, please consult a lawyer who can advise you according to your specific legal needs.</p>
+          	</div>
+          </div>
+        </div>
+      </footer>
+
+		<!-- ===============
+		   END Page Footer
+		================ -->
+
+		<!-- ===============
+		   Page Script Info
+		================ -->
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
+
+		<!-- ===============
+		   END Page Script Info
+		================ -->
 	
 	</body>
 </html>
