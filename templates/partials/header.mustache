@@ -43,8 +43,11 @@
     <script>
     (function() {
       var currentPage = window.location.pathname.split("/").pop();
+      if (!currentPage) {currentPage = "index.html";}
 
-      document.querySelector("#navbarContent a[href='" + currentPage + "']")
-      .className = "nav-link active";
+      var anchorElement = document.querySelector("#navbarContent a[href='" + currentPage + "']");
+      if (!anchorElement) {return;}
+
+      anchorElement.className = "nav-link active";
     }())
     </script>
