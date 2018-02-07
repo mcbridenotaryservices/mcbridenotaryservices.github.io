@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 	<head>
 		<title>Contact Us | McBride Notary Services</title>
 
@@ -116,22 +116,22 @@
 			<div class="row">
 				<div class="col-md-6">
 					<div id="thankyoumsg" style="display: none;">
-						<p style="font-size: 1rem;">Thank you for your enquiry. You will be contacted within 24 hours.</p>
-						<h5 style="padding-top: 1.2rem; font-weight: bold;">Please Note:</h5>
-						<p>1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
-						<p>2. Complete all documents prior to appointment except for signatures and dates.</p>
-						<p>3. The person signing the document must appear before the Notary Public.</p>
-						<p>4. For certified copies of documents, please bring the original document and the photocopy.</p>
-						<p>5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
+						<p class="lead" style="font-size: 1.2rem;">Thank you for your enquiry. You will be contacted within 24 hours.</p>
+						<h5 style="padding-top: 1.2rem; font-weight: 500;">Please Note:</h5>
+						<p class="lead" style="font-size: 1.2rem">1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
+						<p class="lead" style="font-size: 1.2rem">2. Complete all documents prior to appointment except for signatures and dates.</p>
+						<p class="lead" style="font-size: 1.2rem">3. The person signing the document must appear before the Notary Public.</p>
+						<p class="lead" style="font-size: 1.2rem">4. For certified copies of documents, please bring the original document and the photocopy.</p>
+						<p class="lead" style="font-size: 1.2rem">5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
 					</div>
 					<div id="contactMsg" >
-						<p style="font-size: 1rem;">If you would like to book an appointment or have any questions about our services, please complete the form below.</p>
+						<p class="lead" style="font-size: 1.2rem">If you would like to book an appointment or have any questions about our services, please complete the form below.</p>
 					</div>
 					<div id="formIncomplete" style="display: none;">
-						<p style="font-size: 1rem; color: red;">Please complete the highlighted fields.</p>
+						<p class="lead" style="font-size: 1.2rem; color: red;">Please complete the highlighted fields.</p>
 					</div>
 					<div id="email-invalid" style="display: none;">
-						<p style="font-size: 1rem; color: red;">Email address is invalid.</p>
+						<p class="lead" style="font-size: 1.2rem; color: red;">Email address is invalid.</p>
 					</div>
 					<form id="gform">
 						<div class="form-row">
@@ -152,7 +152,7 @@
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<select id="inputLocation" class="form-control" >
+								<select id="inputLocation" class="form-control" placeholder="Preferred Location">
 									<option selected>Preferred Location</option>
 									<option>London West</option>
 									<option>London East</option>
@@ -164,25 +164,33 @@
 							</div>							
 						</div>
 						<div class="form-group">
-							<select id="inputService" class="form-control" >
+							<select id="inputService" class="form-control" placeholder="Service Requested">
 								<option selected>Select Service</option>
-                  					<option>Commission of Oaths</option>
-                  					<option>Letter of Invitation</option>
-                  					<option>Notarization of Document</option>
-                  					<option>Passport Application</option>
-                  					<option>Permission to Travel with a Minor</option>
-                  					<option>Professional Applications</option>
-                  					<option>Proof of Loss Document</option>
-                  					<option>Statutory Declaration</option>
-                  					<option>Swearing Affidavit</option>
-                  					<option>Witnessing Signature</option>
-                  					<option>Other</option>
+								<option>Affidavits</option>
+								<option>Certified True Copies</option>
+								<option>Child Care Fee Subsidy Application</option>
+								<option>Commissioner of Oaths</option>
+								<option>Common Law Union Statutory Declarations</option>
+								<option>Custodianship Declarations</option>
+								<option>Foreign Student Custodial Declarations</option>
+								<option>Letter of Invitation</option>
+								<option>Notarization</option>
+								<option>Passport Applications</option>
+								<option>Professional Applications</option>
+								<option>Proof of Loss Documents</option>
+								<option>Statutory Declarations</option>
+								<option>Statutory Declarations of Marital Status</option>
+								<option>Statutory Declaration to Change Name</option>
+								<option>Travel Consent Letter</option>
+								<option>Witnessing Signatures</option>
+                  				<option>Other (Please specify in your message)</option>
 							</select>
 						</div>
 						<div class="form-group">
 							<textarea class="form-control" id="inputMessage" rows="3" maxlength="250" placeholder="Message" ></textarea>
-							<div id="textRemaining" class="text-right">250 characters remaining</div>						</div>
-						<p style="font-size: 1rem; line-height: 1.5;">To safeguard your personal information, please do not include any confidential or sensitive information in your message.</p>
+							<div id="textRemaining" class="text-right lead" style="font-size: .9rem; margin-top: .2rem;">250 characters remaining</div>						
+						</div>
+						<p class="lead" style="font-size: 1rem; line-height: 1.2;">To safeguard your personal information, please do not include any confidential or sensitive information in your message.</p>
 						
 						<button type="submit" class="btn btn-primary btn-block" id="submitInfo">Request Appointment</button>
 					</form>
@@ -195,7 +203,7 @@
 							<span class="glyphicon glyphicon-phone" aria-hidden="true" style="color: #000; font-size: 1.5rem;">
 						</div>
 						<div class="col-10">
-							<a href="tel:+1-416.919.5273" style="color: #343a40; font-weight: bold;"></span>416.919.5273</a>
+							<a href="tel:+1-416.919.5273" style="color: #343a40; font-weight: 500;"></span>416.919.5273</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -203,7 +211,7 @@
 							<span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: #000; padding-right: 1rem; font-size: 1.5rem;">
 						</div>
 						<div class="col-10">
-							<a href="mailto:karen@mcbridenotaryservices.ca?Subject=Notary%20Services" target="_top" style="color: #343a40; font-weight: bold;"></span>karen@mcbridenotaryservices.ca</a>
+							<a href="mailto:karen@mcbridenotaryservices.ca?Subject=Notary%20Services" target="_top" style="color: #343a40; font-weight: 500;"></span>karen@mcbridenotaryservices.ca</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -211,7 +219,7 @@
 							<img alt="Insta Logo" target="_blank" style="height: 25px;" src="./images/linkedin_logo_128_blk.png" />
 						</div>
 						<div class="col-10">
-							<a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank" style="color: #343a40; font-weight: bold;"></span>LinkedIn</a>
+							<a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank" style="color: #343a40; font-weight: 500;"></span>LinkedIn</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -219,7 +227,7 @@
 							<img alt="Facebook Logo" style="height: 25px;" src="./images/FB-f-Logo__black_114.png" />
 						</div>
 						<div class="col-10">
-							<a href="#" target="_blank" style="color: #343a40; font-weight: bold;"></span>Facebook</a>
+							<a href="#" target="_blank" style="color: #343a40; font-weight: 500;"></span>Facebook</a>
 						</div>
 					</div>
 				</div>
@@ -262,8 +270,8 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="./js/jquery.min.js"></script>
-		<script type="text/javascript" src="./js/bootstrap.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    	<script type="text/javascript" src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 		
 		<!-- ===============
 		   END Page Script Info
@@ -345,7 +353,7 @@
 
 			function getFormData() {
 				var form = document.getElementById("gform")
-				var data = {"timestamp": new Date(), "ipAddress": "", "referrer": "", "response": "", "formComplete": true};
+				var data = {"response": "", "formComplete": true};
 
 				$("#formIncomplete").css( "display", "none" );
 				$("#email-invalid").css( "display", "none" );
@@ -366,7 +374,7 @@
 					}
 				});
 
-				console.log(data);
+				data.formDataNameOrder = JSON.stringify(data);
 				return data;
 			}
 
