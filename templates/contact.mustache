@@ -31,38 +31,37 @@
 		================ -->
 
 
-		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 97px;">
+		<div style="margin-top: 135px; position: relative;">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="first-slide d-block w-100" src="./images/headerContact_1900x300.png" alt="First slide">
-				<!--             ref: https://www.pexels.com -->
+					<img class="first-slide d-block w-100" src="./images/headerContact_1900x300.jpg" alt="First slide">
+					<!-- ref: https://www.pexels.com -->
 				</div>
 			</div>
 		</div>
 
-		<div class="container" style="padding-top: 3rem; min-height: 713px;">
-			<h3 class="display-4" style="margin-bottom: 20px;">Contact Us</h3>
+		<div class="container" style="padding-top: 3rem;">
+			<h3 class="display-4" style="font-size: 3rem; margin-bottom: 1.5rem;">Contact Us</h3>
 			<div class="row">
 				<div class="col-md-6">
 					<div id="thankyoumsg" style="display: none;">
-						<p style="font-size: 1rem;">{{contactUsThxText}}</p>
-						<h5 style="padding-top: 1.2rem; font-weight: bold;">Please Note:</h5>
-						<p>1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
-						<p>2. Complete all documents prior to appointment except for signatures and dates.</p>
-						<p>3. The person signing the document must appear before the Notary Public.</p>
-						<p>4. For certified copies of documents, please bring the original document and the photocopy.</p>
-						<p>5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
+						<p class="lead" style="font-size: 1.2rem;">{{contactUsThxText}}</p>
+						<h5 style="padding-top: 1.2rem; font-weight: 500;">Please Note:</h5>
+						{{#contantAddNote}}
+							<p class="lead" style="font-size: 1.2rem">{{.}}</p>
+						{{/contantAddNote}}
+
 					</div>
 					<div id="contactMsg" >
-						<p style="font-size: 1rem;">{{contactUsText}}</p>
+						<p class="lead" style="font-size: 1.2rem">{{contactUsText}}</p>
 					</div>
 					<div id="formIncomplete" style="display: none;">
-						<p style="font-size: 1rem; color: red;">Please complete the highlighted fields.</p>
+						<p class="lead" style="font-size: 1.2rem; color: red;">Please complete the highlighted fields.</p>
 					</div>
 					<div id="email-invalid" style="display: none;">
-						<p style="font-size: 1rem; color: red;">Email address is invalid.</p>
+						<p class="lead" style="font-size: 1.2rem; color: red;">Email address is invalid.</p>
 					</div>
-					<form id="gform" style="margin-bottom: 2rem;">
+					<form id="gform">
 						<div class="form-row">
 							<div class="form-group col-md-6">
 								<input type="text" class="form-control" id="inputFirstName" placeholder="First Name" >
@@ -81,10 +80,11 @@
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6">
-								<select id="inputLocation" class="form-control" >
-									<option selected>Select Location</option>
-									<option>London West</option>
-									<option>London East</option>
+								<select id="inputLocation" class="form-control" placeholder="Preferred Location">
+									<option selected>Preferred Location</option>
+									{{#locations}}
+											<option>{{.}}</option>
+									{{/locations}}
 								</select>
 							</div>
 							<div class="form-group col-md-6">
@@ -92,17 +92,18 @@
 							</div>							
 						</div>
 						<div class="form-group">
-							<select id="inputService" class="form-control" >
+							<select id="inputService" class="form-control" placeholder="Service Requested">
 								<option selected>Select Service</option>
-								{{#services}}
-                  					<option>{{.}}</option>
+								{{#services}}	
+										<option>{{.}}</option>
 								{{/services}}
 							</select>
 						</div>
 						<div class="form-group">
 							<textarea class="form-control" id="inputMessage" rows="3" maxlength="250" placeholder="Message" ></textarea>
-							<div id="textRemaining" class="text-right">250 characters remaining</div>						</div>
-						<p style="font-size: 1rem; line-height: 1.5;">{{contactUsSecurityText}}</p>
+							<div id="textRemaining" class="text-right lead" style="font-size: .9rem; margin-top: .2rem;">250 characters remaining</div>						
+						</div>
+						<p class="lead" style="font-size: 1rem; line-height: 1.2;">{{contactUsSecurityText}}</p>
 						
 						<button type="submit" class="btn btn-primary btn-block" id="submitInfo">Request Appointment</button>
 					</form>
@@ -115,7 +116,7 @@
 							<span class="glyphicon glyphicon-phone" aria-hidden="true" style="color: #000; font-size: 1.5rem;">
 						</div>
 						<div class="col-10">
-							<a href="tel:+1-{{companyPhone}}" style="color: #343a40; font-weight: bold;"></span>{{companyPhone}}</a>
+							<a href="tel:+1-{{companyPhone}}" style="color: #343a40; font-weight: 500;"></span>{{companyPhone}}</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -123,15 +124,15 @@
 							<span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: #000; padding-right: 1rem; font-size: 1.5rem;">
 						</div>
 						<div class="col-10">
-							<a href="mailto:{{companyEmail}}?Subject=Notary%20Services" target="_top" style="color: #343a40; font-weight: bold;"></span>{{companyEmail}}</a>
+							<a href="mailto:{{companyEmail}}?Subject=Request%20for%20Notary%20Services" target="_top" style="color: #343a40; font-weight: 500;"></span>{{companyEmail}}</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
 						<div class="col-2">
-							<img alt="Insta Logo" target="_blank" style="height: 25px;" src="./images/linkedin_logo_128_blk.png" />
+							<img alt="LinkedIn Logo" target="_blank" style="height: 25px;" src="./images/linkedin_logo_128_blk.png" />
 						</div>
 						<div class="col-10">
-							<a href="{{{link_Linkedin}}}" target="_blank" style="color: #343a40; font-weight: bold;"></span>LinkedIn</a>
+							<a href="{{{link_Linkedin}}}" target="_blank" style="color: #343a40; font-weight: 500;"></span>LinkedIn</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
@@ -139,7 +140,7 @@
 							<img alt="Facebook Logo" style="height: 25px;" src="./images/FB-f-Logo__black_114.png" />
 						</div>
 						<div class="col-10">
-							<a href="{{{link_Facebook}}}" target="_blank" style="color: #343a40; font-weight: bold;"></span>Facebook</a>
+							<a href="{{{link_Facebook}}}" target="_blank" style="color: #343a40; font-weight: 500;"></span>Facebook</a>
 						</div>
 					</div>
 				</div>
@@ -161,142 +162,12 @@
 		================ -->
 
 		{{> script}}
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-		
+		<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="./js/contactForm.js"></script>
+
 		<!-- ===============
 		   END Page Script Info
 		================ -->
 	
-		<script type="text/javascript">
-
-			$("#datepicker").datepicker();
-
-			// Variable to hold request
-			var request;
-
-			// Bind to the submit event of our form
-			$("#gform").submit(function(event){
-
-				// Prevent default posting of form - put here to work in case of errors
-				event.preventDefault();
-
-				// Abort any pending request
-				if (request) {
-					request.abort();
-				}
-
-
-				var formData = getFormData();
-
-				if (formData.formComplete) {
-					// setup some local variables
-					if( !validEmail(formData.inputEmail) ) {   // if email is not valid show error
-						$("#email-invalid").css( "display", "block" );
-						return false;
-					}
-
-					var $form = $(this);
-
-					var $inputs = $form.find("input, select, button, textarea"); // Let's select and cache all the fields
-
-					// Disable the inputs for the duration of the Ajax request.
-					// Note: we disable elements AFTER the form data has been serialized.
-					// Disabled form elements will not be serialized.
-					$inputs.prop("disabled", true);
-
-					// Fire off the request to /form.php
-					request = $.ajax({
-						url: "https://script.google.com/macros/s/AKfycbxGqTOOCfXJXI5HD5GxQfz7Cns9Pu4CElwrDDp0r8v8Ur5kefxq/exec",
-						type: "post",
-						data: formData
-					});
-
-					// Callback handler that will be called on success
-					request.done(function (response, textStatus, jqXHR){
-						// Log a message to the console
-						console.log("Data successfully transmitted.");
-
-						$("#formIncomplete").css( "display", "none" );
-						$("form").css( "display", "none" );
-						$("#contactMsg").css( "display", "none" );
-						$("#thankyoumsg").css( "display", "block" );
-
-					});
-
-					// Callback handler that will be called on failure
-					request.fail(function (jqXHR, textStatus, errorThrown){
-						// Log the error to the console
-						console.error(
-						"The following error occurred: "+
-						textStatus, errorThrown
-						);
-					});
-
-					// Callback handler that will be called regardless
-					// if the request failed or succeeded
-					request.always(function () {
-					// Reenable the inputs
-						$inputs.prop("disabled", false);
-					});
-				}
-
-			});
-
-			function getFormData() {
-				var form = document.getElementById("gform")
-				var data = {"timestamp": new Date(), "ipAddress": "", "referrer": "", "response": "", "formComplete": true};
-
-				$("#formIncomplete").css( "display", "none" );
-				$("#email-invalid").css( "display", "none" );
-
-				$(".form-control").each(function(index,element) {
-					data[element.id] = element.value;
-
-					if ((element.id !== "inputMessage") && ((element.value == "Select Location") || (element.value == "Select Service") || !element.value)) 
-					{
-						$("#" + element.id).css( "background-color", "#f7f2d7" );
-						$("#formIncomplete").css( "display", "block" );
-						data["formComplete"] = false;
-					}
-					else
-					{
-						$("#" + element.id).css( "background-color", "#fff" );
-						
-					}
-				});
-
-				console.log(data);
-				return data;
-			}
-
-
-			function validEmail(email) { // see:
-				var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-				return re.test(email);
-			}
-
-			$(document).ready(function () {
-
-				$('#inputMessage').keypress(function (event) {
-					var max = 250;
-					var len = $(this).val().length;
-
-					if (len >= max) {
-						event.preventDefault();
-					}
-				});
-
-			  $('#inputMessage').keyup(function (event) {
-					var max = 250;
-					var len = $(this).val().length;
-					var char = max - len;
-
-					$('#textRemaining').text(char + ' characters remaining');
-				});
-
-			});
-
-		</script>
-
 	</body>
 </html>
