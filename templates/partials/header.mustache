@@ -1,32 +1,43 @@
     <header class="fixed-top" style="background-color: #fff; height: 30px; padding-top: 3px;">
       <div class="container">
         <div class="row">
-          <div class="col-9 text-left">
-            <a href="tel:+1-{{companyPhone}}" style="color: #343a40; font-weight: bold;"><span class="glyphicon glyphicon-phone" aria-hidden="true" style="color: #343a40;"></span> Call/Text {{companyPhone}}</a>
-          </div>
-          <div class="col-3 text-right">
-            <a style="padding: 0; color: #343a40; padding-right: .5rem;" href="#">Français</a>
+          <div class="col-12 d-sm-block d-md-none text-center">
+            <a href="tel:+1-{{companyPhone}}" style="color: #343a40; font-weight: bold;"><span class="glyphicon glyphicon-phone" aria-hidden="true" style="color: #343a40;"></span> Call or Text {{companyPhone}}</a>
           </div>
         </div>
       </div>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="top: 30px;">
-      <div class="container d-flex justify-content-between">
-        <a class="navbar-brand" href="index.html" style="padding-left: 0px; margin-right: 0px; font-size: 1.1rem;"><span style="font-family: 'Playfair Display', sans-serif; font-weight: bold; color: #fff;">MNS</span> | {{companyName}}</a>
-        <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav" style="margin-left: auto;">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
+      <div class="container">
+        <div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
+          <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="locations.html">Locations</a>
             </li>
+          </ul>
+        </div>
+
+        <a class="navbar-brand" href="index.html" style="margin-right: 0;">
+          <img src="./images/logoFull_White_1000x264.png" height="60" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navContent">
+          <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="services.html">Services & Fees</a>
+              <a class="nav-link d-md-block d-lg-none" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-md-block d-lg-none" href="locations.html">Locations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
@@ -34,11 +45,9 @@
           </ul>
         </div>
 
-        <button class="navbar-toggler" style="font-size: 1.1rem;" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
       </div>
     </nav>
+
 
     <script>
     (function() {
