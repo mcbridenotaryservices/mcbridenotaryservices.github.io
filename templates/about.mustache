@@ -34,32 +34,35 @@
 			<div class="row">
 				<div class="col-md-4">
 					<figure class="figure">
-						<img src="./images/headShotBio_645x959.jpg" class="figure-img img-fluid rounded" alt="{{ownerName}}" />
+						<img src="./images/headShotBio_645x959.jpg" class="figure-img img-fluid rounded" alt="Karen J. A. McBride" />
 					</figure>
 				</div>
 				<div class="col-md-8">
 					<h2 style="margin-bottom: 2rem;">{{ownerName}} <span style="color: #9e9d9d;">| {{ownerTitle}}</span></h2> 
-
-					{{#bio}}
-						<p style="font-size: 1.2rem">{{.}}</p>
-					{{/bio}}
-
+						{{#bio}}
+							<p class="lead" style="font-size: 1.2rem">{{.}}</p>
+						{{/bio}}
 				</div>
 			</div>
-			<hr style="margin: 20px 0;">
+			<hr style="margin: 0;">
 			<div class="row">
-				<div class="col-md-4">
-					<h5>Education</h5>
-					<p style="margin-bottom: 0;">University of Ottawa, 2006</p>
-					<p style="margin-bottom: 0;">Wilfrid Laurier University, 2003</p>
+				<div class="col-lg-5" style="margin-top: 20px;">
+					<p class="lead" style="font-weight: 500; font-size: 1rem; margin-bottom: .5rem;">Education</p>
+					{{#edu}}
+						<p class="lead" style="margin-bottom: 0; font-size: 1rem;">{{.}}</p>
+					{{/edu}}
 				</div>
-				<div class="col-md-4">
-					<h5>Areas of Practice</h5>
-					<p style="margin-bottom: 0;">Workers’ Compensation Law</p>
+				<div class="col-lg-4" style="margin-top: 20px;">
+					<p class="lead" style="font-weight: 500; font-size: 1rem; margin-bottom: .5rem;">Areas of Practice</p>
+					{{#aop}}
+						<p class="lead" style="margin-bottom: 0; font-size: 1rem;">{{.}}</p>
+					{{/aop}}
 				</div>
-				<div class="col-md-4">
-					<h5>Professional Associations</h5>
-					<p style="margin-bottom: 0;">Law Society of Upper Canada</p>
+				<div class="col-lg-3" style="margin-top: 20px;">
+					<p class="lead" style="font-weight: 500; font-size: 1rem; margin-bottom: .5rem;">Professional Associations</p>
+					{{#pa}}
+						<p class="lead" style="margin-bottom: 0; font-size: 1rem;">{{.}}</p>
+					{{/pa}}
 				</div>
 			</div>
 		</div>
