@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 	<head>
 		<title>Locations | {{companyName}}</title>
 
@@ -10,7 +10,6 @@
 		{{> head}}
 
 		<meta name="description" content="{{companyName}}">
-		<meta name="author" content="{{ownerName}}">
 
 		<!-- ===============
 			END Page Head Info
@@ -30,19 +29,18 @@
 			END Page Header
 		================ -->
 
-		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 97px;">
+		<div style="margin-top: 135px; position: relative;">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="first-slide d-block w-100" src="./images/headerLocations_1900x300.png" alt="First slide">
-				<!--             ref: https://www.pexels.com -->
+					<img class="first-slide d-block w-100" src="./images/headerLocations_1600x267test.jpg" alt="First slide">
 				</div>
 			</div>
 		</div>
 
 		<div class="container" style="padding-top: 3rem; padding-bottom: 3rem;">
 			<h3 class="display-4" style="margin-bottom: 20px;">Locations</h3>
-			<p style="margin-top: 2rem; font-size: 1.25rem; ">In addition to our two convenient locations, McBride Notary Services also offers mobile notary services.  Please <a href="contact.html">contact us</a> for more information.</p>
-			{{locationsText}}
+			<p style="margin-top: 2rem; font-size: 1.25rem; ">{{locationsText}}</p>
+			
 			<div class="row" style="align-items: center; padding-top: 1rem;">
 
 				<div class="col-md-6" style="padding-bottom: 1.5rem;">
@@ -51,7 +49,6 @@
 						<div class="card-body text-center">
 							<h4 class="card-title">London West</h4>
 							<p class="card-text">Wonderland Road North & Riverside Drive</p>
-							<a href="contact.html" class="btn btn-primary">Request Appointment</a>
 						</div>
 					</div>
 				</div>
@@ -61,11 +58,12 @@
 						<div class="card-body text-center">
 							<h4 class="card-title">London East</h4>
 							<p class="card-text">Commissioners Road East & Highbury Avenue North</p>
-							<a href="contact.html" class="btn btn-primary">Request Appointment</a>
 						</div>
 					</div>
 				</div>
-
+			</div>
+			<div class="row justify-content-center" style="margin-top: 20px;">
+				<a href="contact.html" class="btn btn-primary" style="padding-left: 50px; padding-right: 50px;">Request Appointment</a>
 			</div>
 		</div>
 		
