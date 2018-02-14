@@ -8,27 +8,27 @@
 		================ -->		
 
 		<link href="./css/bootstrap.css" rel="stylesheet">
-		<link href="css/sticky-footer-navbar.css" rel="stylesheet">
+		<link href="./css/sticky-footer-navbar.css" rel="stylesheet">
+
 		<link rel="icon" type="image/png" href="./images/Logo2_Black.png">
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-		<meta name="description" content="McBride Notary Services">
+		<meta name="mobileoptimized" content="0" />
 		<meta name="author" content="Karen J. A. McBride">
-
-		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-		<!-- ===============
-			END Page Head Info
-		================ -->
 
 		<style type="text/css"> 
 			.navbar-expand-lg .navbar-nav .nav-link {padding-right: 3rem; padding-left: 3rem;}
 			h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight: 400;}
+			 @-ms-viewport {width: device-width;}
     	</style>
+
+		<meta name="description" content="McBride Notary Services">
+
+		<!-- ===============
+			END Page Head Info
+		================ -->
 
 	</head>
 
@@ -49,51 +49,55 @@
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="top: 30px;">
-    	<div class="container">
-			<div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="about.html">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="locations.html">Locations</a>
-					</li>
-				</ul>
-			</div>        
-			<a class="navbar-brand" href="index.html" style="margin-right: 0;">
-				<img src="./images/logoFull_White_1000x264.png" height="60" alt="">
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+      <div class="container">
+        <div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="locations.html">Locations</a>
+            </li>
+          </ul>
+        </div>
 
+        <a class="navbar-brand" href="index.html" style="margin-right: 0;">
+          <img src="./images/logoFull_White_1000x264.png" height="60" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-			<div class="collapse navbar-collapse justify-content-center" id="navContent">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link d-md-block d-lg-none" href="about.html">About</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link d-md-block d-lg-none" href="locations.html">Locations</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="services.html">Services</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="contact.html">Contact</a>
-					</li>
-				</ul>
-			</div>
+        <div class="collapse navbar-collapse justify-content-center" id="navContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link d-md-block d-lg-none" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-md-block d-lg-none" href="locations.html">Locations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
 
-		</div>
+      </div>
     </nav>
+
 
     <script>
     (function() {
       var currentPage = window.location.pathname.split("/").pop();
+      if (!currentPage) {currentPage = "index.html";}
 
-      document.querySelector(".navContent a[href='" + currentPage + "']")
-      .className = "nav-link active";
+      var anchorElement = document.querySelector("#navbarContent a[href='" + currentPage + "']");
+      if (!anchorElement) {return;}
+
+      anchorElement.className = "nav-link active";
     }())
     </script>
 
@@ -102,11 +106,11 @@
 		================ -->
 
 
-		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 135px;">
+		<div style="margin-top: 135px; position: relative;">
 			<div class="carousel-inner">
 				<div class="carousel-item active">
 					<img class="first-slide d-block w-100" src="./images/headerContact_1900x300.jpg" alt="First slide">
-				<!--             ref: https://www.pexels.com -->
+					<!-- ref: https://www.pexels.com -->
 				</div>
 			</div>
 		</div>
@@ -118,14 +122,10 @@
 					<div id="thankyoumsg" style="display: none;">
 						<p class="lead" style="font-size: 1.2rem;">Thank you for your enquiry. You will be contacted within 24 hours.</p>
 						<h5 style="padding-top: 1.2rem; font-weight: 500;">Please Note:</h5>
-						<p class="lead" style="font-size: 1.2rem">1. Do not sign or date documents prior to your appointment. During the appointment, your identity will be verified and signature witnessed.</p>
-						<p class="lead" style="font-size: 1.2rem">2. Complete all documents prior to appointment except for signatures and dates.</p>
-						<p class="lead" style="font-size: 1.2rem">3. The person signing the document must appear before the Notary Public.</p>
-						<p class="lead" style="font-size: 1.2rem">4. For certified copies of documents, please bring the original document and the photocopy.</p>
-						<p class="lead" style="font-size: 1.2rem">5. Government issued photo identification (Driver's License, Passport, etc) is required at your appointment to verify identity.</p>
+
 					</div>
 					<div id="contactMsg" >
-						<p class="lead" style="font-size: 1.2rem">If you would like to book an appointment or have any questions about our services, please complete the form below.</p>
+						<p class="lead" style="font-size: 1.2rem">If you would like to book an appointment or have any questions about our services, please complete the form below. Appointments are available days, evenings and weekends, and on urgent or short notice.</p>
 					</div>
 					<div id="formIncomplete" style="display: none;">
 						<p class="lead" style="font-size: 1.2rem; color: red;">Please complete the highlighted fields.</p>
@@ -154,9 +154,6 @@
 							<div class="form-group col-md-6">
 								<select id="inputLocation" class="form-control" placeholder="Preferred Location">
 									<option selected>Preferred Location</option>
-									<option>London West</option>
-									<option>London East</option>
-									<option>Mobile Services</option>
 								</select>
 							</div>
 							<div class="form-group col-md-6">
@@ -166,24 +163,17 @@
 						<div class="form-group">
 							<select id="inputService" class="form-control" placeholder="Service Requested">
 								<option selected>Select Service</option>
-								<option>Affidavits</option>
-								<option>Certified True Copies</option>
-								<option>Child Care Fee Subsidy Application</option>
-								<option>Commissioner of Oaths</option>
-								<option>Common Law Union Statutory Declarations</option>
-								<option>Custodianship Declarations</option>
-								<option>Foreign Student Custodial Declarations</option>
-								<option>Letter of Invitation</option>
-								<option>Notarization</option>
-								<option>Passport Applications</option>
-								<option>Professional Applications</option>
-								<option>Proof of Loss Documents</option>
-								<option>Statutory Declarations</option>
-								<option>Statutory Declarations of Marital Status</option>
-								<option>Statutory Declaration to Change Name</option>
-								<option>Travel Consent Letter</option>
-								<option>Witnessing Signatures</option>
-                  				<option>Other (Please specify in your message)</option>
+										<option>Commission of Oaths</option>
+										<option>Letter of Invitation</option>
+										<option>Notarization of Document</option>
+										<option>Passport Application</option>
+										<option>Permission to Travel with a Minor</option>
+										<option>Professional Applications</option>
+										<option>Proof of Loss Document</option>
+										<option>Statutory Declaration</option>
+										<option>Swearing Affidavit</option>
+										<option>Witnessing Signature</option>
+										<option>Other</option>
 							</select>
 						</div>
 						<div class="form-group">
@@ -211,12 +201,12 @@
 							<span class="glyphicon glyphicon-envelope" aria-hidden="true" style="color: #000; padding-right: 1rem; font-size: 1.5rem;">
 						</div>
 						<div class="col-10">
-							<a href="mailto:karen@mcbridenotaryservices.ca?Subject=Notary%20Services" target="_top" style="color: #343a40; font-weight: 500;"></span>karen@mcbridenotaryservices.ca</a>
+							<a href="mailto:kmcbr072@gmail.com?Subject=Request%20for%20Notary%20Services" target="_top" style="color: #343a40; font-weight: 500;"></span>kmcbr072@gmail.com</a>
 						</div>
 					</div>
 					<div class="row" style="padding-bottom: 2rem;">
 						<div class="col-2">
-							<img alt="Insta Logo" target="_blank" style="height: 25px;" src="./images/linkedin_logo_128_blk.png" />
+							<img alt="LinkedIn Logo" target="_blank" style="height: 25px;" src="./images/linkedin_logo_128_blk.png" />
 						</div>
 						<div class="col-10">
 							<a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank" style="color: #343a40; font-weight: 500;"></span>LinkedIn</a>
@@ -227,7 +217,7 @@
 							<img alt="Facebook Logo" style="height: 25px;" src="./images/FB-f-Logo__black_114.png" />
 						</div>
 						<div class="col-10">
-							<a href="https://www.facebook.com/McBride-Notary-Services-835138260007003" target="_blank" style="color: #343a40; font-weight: 500;"></span>Facebook</a>
+							<a href="#" target="_blank" style="color: #343a40; font-weight: 500;"></span>Facebook</a>
 						</div>
 					</div>
 				</div>
@@ -241,20 +231,20 @@
       <footer class="footer">
         <div class="container">
           <div class="row" style="padding-top:15px;">
-	          <div class="col-6">
-	          		<img src="./images/logoFull_White_1000x264.png" height="35" alt="">
-	          </div>
-	          <div class="col-6 text-right">
-		            <ul class="list-inline" style="margin-left: auto; margin-right: auto;">
-		              <li class="list-inline-item" style="padding: 0 5px;"><a href="https://www.facebook.com/McBride-Notary-Services-835138260007003" target="_blank"><img alt="Facebook Logo" style="height: 30px;" src="./images/FB-f-Logo__white_114.png" /></a></li>
-		              <li class="list-inline-item" style="padding: 0 5px;"><a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank"><img alt="Linkedin Logo" style="height: 30px;" src="./images/linkedin_logo_128.png" /></a></li>
-		            </ul>
-              </div>
+            <div class="col-6">
+                <img src="./images/logoFull_White_1000x264.png" height="35" alt="">
+            </div>
+            <div class="col-6 text-right">
+                <ul class="list-inline" style="margin-left: auto; margin-right: auto;">
+                  <li class="list-inline-item" style="padding: 0 5px;"><a href="#" target="_blank"><img alt="Facebook Logo" style="height: 30px;" src="./images/FB-f-Logo__white_114.png" /></a></li>
+                  <li class="list-inline-item" style="padding: 0 5px;"><a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank"><img alt="Linkedin Logo" style="height: 30px;" src="./images/linkedin_logo_128.png" /></a></li>
+                </ul>
+            </div>
           </div>
           <div class="row">
-          	<div class="col-12" style="margin-top: .5rem;">
-          		<p style="font-size: .8rem; line-height: 1.25; margin-top: 0;">McBride Notary Services does not provide legal advice and retaining McBride Notary Services does not create a solicitor-client relationship. The information contained in this website is for general information purposes only. If you require legal advice, please consult a lawyer who can advise you according to your specific legal needs.</p>
-          	</div>
+            <div class="col-12" style="margin-top: .5rem;">
+              <p style="font-size: .8rem; line-height: 1.25; margin-top: 0;"></p>
+            </div>
           </div>
         </div>
       </footer>
@@ -267,145 +257,15 @@
 		   Page Script Info
 		================ -->
 
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="./js/jquery.min.js"></script>
-    	<script type="text/javascript" src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-    	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-		
+	    <script type="text/javascript" src="./js/popper.min.js"></script>
+	    <script type="text/javascript" src="./js/jquery-3.2.1.slim.min.js"></script>
+	    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="./js/contactForm.js"></script>
+
 		<!-- ===============
 		   END Page Script Info
 		================ -->
 	
-		<script type="text/javascript">
-
-			$("#datepicker").datepicker();
-
-			// Variable to hold request
-			var request;
-
-			// Bind to the submit event of our form
-			$("#gform").submit(function(event){
-
-				// Prevent default posting of form - put here to work in case of errors
-				event.preventDefault();
-
-				// Abort any pending request
-				if (request) {
-					request.abort();
-				}
-
-				var formData = getFormData();
-
-				if (formData.formComplete) {
-					// setup some local variables
-					if( !validEmail(formData.inputEmail) ) {   // if email is not valid show error
-						$("#email-invalid").css( "display", "block" );
-						return false;
-					}
-
-					var $form = $(this);
-
-					var $inputs = $form.find("input, select, button, textarea"); // Let's select and cache all the fields
-
-					// Disable the inputs for the duration of the Ajax request.
-					// Note: we disable elements AFTER the form data has been serialized.
-					// Disabled form elements will not be serialized.
-					$inputs.prop("disabled", true);
-
-					// Fire off the request to /form.php
-					request = $.ajax({
-						url: "https://script.google.com/macros/s/AKfycbxGqTOOCfXJXI5HD5GxQfz7Cns9Pu4CElwrDDp0r8v8Ur5kefxq/exec",
-						type: "post",
-						data: formData
-					});
-
-					// Callback handler that will be called on success
-					request.done(function (response, textStatus, jqXHR){
-						// Log a message to the console
-						console.log("Data successfully transmitted.");
-
-						$("#formIncomplete").css( "display", "none" );
-						$("form").css( "display", "none" );
-						$("#contactMsg").css( "display", "none" );
-						$("#thankyoumsg").css( "display", "block" );
-
-					});
-
-					// Callback handler that will be called on failure
-					request.fail(function (jqXHR, textStatus, errorThrown){
-						// Log the error to the console
-						console.error(
-						"The following error occurred: "+
-						textStatus, errorThrown
-						);
-					});
-
-					// Callback handler that will be called regardless
-					// if the request failed or succeeded
-					request.always(function () {
-					// Reenable the inputs
-						$inputs.prop("disabled", false);
-					});
-				}
-
-			});
-
-			function getFormData() {
-				var form = document.getElementById("gform")
-				var data = {"response": "", "formComplete": true};
-
-				$("#formIncomplete").css( "display", "none" );
-				$("#email-invalid").css( "display", "none" );
-
-				$(".form-control").each(function(index,element) {
-					data[element.id] = element.value;
-
-					if ((element.id !== "inputMessage") && ((element.value == "Preferred Location") || (element.value == "Select Service") || !element.value)) 
-					{
-						$("#" + element.id).css( "background-color", "#f7f2d7" );
-						$("#formIncomplete").css( "display", "block" );
-						data["formComplete"] = false;
-					}
-					else
-					{
-						$("#" + element.id).css( "background-color", "#fff" );
-						
-					}
-				});
-
-				data.formDataNameOrder = JSON.stringify(data);
-				return data;
-			}
-
-
-			function validEmail(email) { // see:
-				var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-				return re.test(email);
-			}
-
-			$(document).ready(function () {
-
-				$('#inputMessage').keypress(function (event) {
-					var max = 250;
-					var len = $(this).val().length;
-
-					if (len >= max) {
-						event.preventDefault();
-					}
-				});
-
-			  $('#inputMessage').keyup(function (event) {
-					var max = 250;
-					var len = $(this).val().length;
-					var char = max - len;
-
-					$('#textRemaining').text(char + ' characters remaining');
-				});
-
-			});
-
-		</script>
-
 	</body>
 </html>
