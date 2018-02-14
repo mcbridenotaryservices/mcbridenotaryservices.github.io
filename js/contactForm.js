@@ -34,7 +34,7 @@
 
 					// Fire off the request to /form.php
 					request = $.ajax({
-						url: "https://script.google.com/macros/s/AKfycbxGqTOOCfXJXI5HD5GxQfz7Cns9Pu4CElwrDDp0r8v8Ur5kefxq/exec",
+						url: "https://script.google.com/macros/s/AKfycbyd3ljEKsQrGGYR0OcqSthCeGdchy49960e71E7iTa_yz_ffXA/exec",
 						type: "post",
 						data: formData
 					});
