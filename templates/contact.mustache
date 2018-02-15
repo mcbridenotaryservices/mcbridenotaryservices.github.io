@@ -11,6 +11,8 @@
 
 		<meta name="description" content="{{companyName}}">
 
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 		<!-- ===============
 			END Page Head Info
 		================ -->
@@ -46,9 +48,9 @@
 					<div id="thankyoumsg" style="display: none;">
 						<p class="lead" style="font-size: 1.2rem;">{{contactUsThxText}}</p>
 						<h5 style="padding-top: 1.2rem; font-weight: 500;">Please Note:</h5>
-						{{#contantAddNote}}
+						{{#contactAddNote}}
 							<p class="lead" style="font-size: 1.2rem">{{.}}</p>
-						{{/contantAddNote}}
+						{{/contactAddNote}}
 
 					</div>
 					<div id="contactMsg" >
@@ -161,6 +163,7 @@
 		================ -->
 
 		{{> script}}
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
 		<script type="text/javascript" src="./js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="./js/contactForm.js"></script>
 
