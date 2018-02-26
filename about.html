@@ -8,27 +8,25 @@
 		================ -->		
 
 		<link href="./css/bootstrap.css" rel="stylesheet">
-		<link href="./css/sticky-footer-navbar.css" rel="stylesheet">
-
+		<link href="css/sticky-footer-navbar.css" rel="stylesheet">
 		<link rel="icon" type="image/png" href="./images/Logo2_Black.png">
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="mobileoptimized" content="0" />
-		<meta name="author" content="Karen J. A. McBride">
 
-		<style type="text/css"> 
-			.navbar-expand-lg .navbar-nav .nav-link {padding-right: 3rem; padding-left: 3rem;}
-			h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight: 400;}
-			 @-ms-viewport {width: device-width;}
-    	</style>
 
 		<meta name="description" content="McBride Notary Services">
+		<meta name="author" content="Karen J. A. McBride">
 
 		<!-- ===============
 			END Page Head Info
 		================ -->
+
+		<style type="text/css"> 
+			.navbar-expand-lg .navbar-nav .nav-link {padding-right: 3rem; padding-left: 3rem;}
+			h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight: 400;}
+    	</style>
 
 	</head>
 
@@ -48,56 +46,52 @@
       </div>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="top: 30px;">
-      <div class="container">
-        <div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="locations.html">Locations</a>
-            </li>
-          </ul>
-        </div>
+     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="top: 30px;">
+    	<div class="container">
+			<div class="collapse navbar-collapse justify-content-center d-none d-lg-block">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="locations.html">Locations</a>
+					</li>
+				</ul>
+			</div>        
+			<a class="navbar-brand" href="index.html" style="margin-right: 0;">
+				<img src="./images/logoFull_White_1000x264.png" height="60" alt="">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-        <a class="navbar-brand" href="index.html" style="margin-right: 0;">
-          <img src="./images/logoFull_White_1000x264.png" height="60" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse justify-content-center" id="navContent">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link d-md-block d-lg-none" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-md-block d-lg-none" href="locations.html">Locations</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
+			<div class="collapse navbar-collapse justify-content-center" id="navContent">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link d-md-block d-lg-none" href="about.html">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link d-md-block d-lg-none" href="locations.html">Locations</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="services.html">Services</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
 
-      </div>
+		</div>
     </nav>
-
 
     <script>
     (function() {
       var currentPage = window.location.pathname.split("/").pop();
-      if (!currentPage) {currentPage = "index.html";}
 
-      var anchorElement = document.querySelector("#navbarContent a[href='" + currentPage + "']");
-      if (!anchorElement) {return;}
-
-      anchorElement.className = "nav-link active";
+      document.querySelector(".navContent a[href='" + currentPage + "']")
+      .className = "nav-link active";
     }())
     </script>
 
@@ -114,27 +108,29 @@
 				</div>
 				<div class="col-md-8">
 					<h2 style="margin-bottom: 2rem;">Karen J. A. McBride <span style="color: #9e9d9d;">| Lawyer, Notary Public</span></h2> 
-							<p class="lead" style="font-size: 1.2rem">Karen McBride received her call to the Bar of Ontario in June 2007, after earning her Bachelor of Laws degree from the University of Ottawa in 2006. She earned a Bachelor of Arts (Honours) degree in English Literature from Wilfrid Laurier University in 2003.</p>
-							<p class="lead" style="font-size: 1.2rem">Karen practices exclusively in the area of workers’ compensation law. Licensed by the Law Society of Ontario, Karen represents clients nationally and appears before Workers’ Compensation Board&#x2F;Commission Appeal Divisions and external Workers’ Compensation Tribunals across Canada.</p>
-							<p class="lead" style="font-size: 1.2rem">Previously, Karen worked as an associate at Polishuk Camman and Steele Barristers and Solicitors. During her time there, she practiced in the area of labour and employment law. Prior to that, Karen worked for the Ministry of Community and Social Services and the Ministry of Children and Youth Services as both an articling student and as legal counsel.</p>
-							<p class="lead" style="font-size: 1.2rem">Karen McBride was appointed as a Notary Public in the province of Ontario in 2010. McBride Notary Services was first established in 2016.</p>
+
+						<p class="lead" style="font-size: 1.2rem">Karen McBride received her call to the Bar of Ontario in June 2007, after earning her Bachelor of Laws degree from the University of Ottawa in 2006. She earned a Bachelor of Arts (Honours) degree in English Literature from Wilfrid Laurier University in 2003.</p>
+						<p class="lead" style="font-size: 1.2rem">Karen practices exclusively in the area of workers’ compensation law. Licensed by the Law Society of Ontario, Karen represents clients nationally and appears before Workers’ Compensation Board&#x2F;Commission Appeal Divisions and external Workers’ Compensation Tribunals across Canada.</p>
+						<p class="lead" style="font-size: 1.2rem">Previously, Karen worked as an associate at Polishuk Camman and Steele Barristers and Solicitors. During her time there, she practiced in the area of labour and employment law. Prior to that, Karen worked for the Ministry of Community and Social Services and the Ministry of Children and Youth Services as both an articling student and as legal counsel.</p>
+						<p class="lead" style="font-size: 1.2rem">Karen McBride was appointed as a Notary Public in the province of Ontario in 2010. McBride Notary Services was established in 2016.</p>
+
 				</div>
 			</div>
 			<hr style="margin: 0;">
 			<div class="row">
 				<div class="col-lg-5" style="margin-top: 20px;">
 					<p class="lead" style="font-weight: 500; font-size: 1rem; margin-bottom: .5rem;">Education</p>
-						<p class="lead" style="margin-bottom: 0; font-size: 1rem;">University of Ottawa, LL.B., 2006</p>
-						<p class="lead" style="margin-bottom: 0; font-size: 1rem;">Wilfrid Laurier University, Hon. B.A., With Distinction, 2003</p>
+					<p class="lead" style="margin-bottom: 0; font-size: 1rem;">University of Ottawa, LL.B., 2006</p>
+					<p class="lead" style="margin-bottom: 0; font-size: 1rem;">Wilfrid Laurier University, Hon. B.A., With Distinction, 2003</p>
 				</div>
 				<div class="col-lg-4" style="margin-top: 20px;">
 					<p class="lead" style="font-weight: 500; font-size: 1rem; margin-bottom: .5rem;">Areas of Practice</p>
-						<p class="lead" style="margin-bottom: 0; font-size: 1rem;">Workers’ Compensation Law</p>
+					<p class="lead" style="margin-bottom: 0; font-size: 1rem;">Workers’ Compensation Law</p>
 				</div>
 				<div class="col-lg-3" style="margin-top: 20px;">
 					<p class="lead" style="font-weight: 500; font-size: 1rem; margin-bottom: .5rem;">Professional Associations</p>
-						<p class="lead" style="margin-bottom: 0; font-size: 1rem;">Law Society of Ontario</p>
-						<p class="lead" style="margin-bottom: 0; font-size: 1rem;">Ontario Bar Association</p>
+					<p class="lead" style="margin-bottom: 0; font-size: 1rem;">Law Society of Ontario</p>
+					<p class="lead" style="margin-bottom: 0; font-size: 1rem;">Ontario Bar Association</p>
 				</div>
 			</div>
 		</div>
@@ -146,20 +142,20 @@
       <footer class="footer">
         <div class="container">
           <div class="row" style="padding-top:15px;">
-            <div class="col-6">
-                <img src="./images/logoFull_White_1000x264.png" height="35" alt="">
-            </div>
-            <div class="col-6 text-right">
-                <ul class="list-inline" style="margin-left: auto; margin-right: auto;">
-                  <li class="list-inline-item" style="padding: 0 5px;"><a href="https://www.facebook.com/McBride-Notary-Services-835138260007003" target="_blank"><img alt="Facebook Logo" style="height: 30px;" src="./images/FB-f-Logo__white_114.png" /></a></li>
-                  <li class="list-inline-item" style="padding: 0 5px;"><a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank"><img alt="Linkedin Logo" style="height: 30px;" src="./images/linkedin_logo_128.png" /></a></li>
-                </ul>
-            </div>
+	          <div class="col-6">
+	          		<img src="./images/logoFull_White_1000x264.png" height="35" alt="">
+	          </div>
+	          <div class="col-6 text-right">
+		            <ul class="list-inline" style="margin-left: auto; margin-right: auto;">
+		              <li class="list-inline-item" style="padding: 0 5px;"><a href="https://www.facebook.com/McBride-Notary-Services-835138260007003" target="_blank"><img alt="Facebook Logo" style="height: 30px;" src="./images/FB-f-Logo__white_114.png" /></a></li>
+		              <li class="list-inline-item" style="padding: 0 5px;"><a href="https://ca.linkedin.com/in/karen-j-mcbride-29226610" target="_blank"><img alt="Linkedin Logo" style="height: 30px;" src="./images/linkedin_logo_128.png" /></a></li>
+		            </ul>
+              </div>
           </div>
           <div class="row">
-            <div class="col-12" style="margin-top: .5rem;">
-              <p style="font-size: .8rem; line-height: 1.25; margin-top: 0;">McBride Notary Services does not provide legal advice and retaining McBride Notary Services does not create a solicitor-client relationship. The information contained in this website is for general information purposes only. If you require legal advice, please consult a lawyer who can advise you according to your specific legal needs.</p>
-            </div>
+          	<div class="col-12" style="margin-top: .5rem;">
+          		<p style="font-size: .8rem; line-height: 1.25; margin-top: 0;">McBride Notary Services does not provide legal advice and retaining McBride Notary Services does not create a solicitor-client relationship. The information contained in this website is for general information purposes only. If you require legal advice, please consult a lawyer who can advise you according to your specific legal needs.</p>
+          	</div>
           </div>
         </div>
       </footer>
@@ -172,9 +168,9 @@
 		   Page Script Info
 		================ -->
 
-	    <script type="text/javascript" src="./js/popper.min.js"></script>
-	    <script type="text/javascript" src="./js/jquery-3.2.1.slim.min.js"></script>
-	    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 
 		<!-- ===============
 		   END Page Script Info
