@@ -12,7 +12,7 @@ http.createServer((req, resp)=>{
   if (req.url === "/hc") {return resp.end();}
   if (!req.url.includes(triggerKey)) {return req.destroy();}
 
-  exec("npm run pull-generate-push", {cwd})
+  exec("git checkout development && npm run pull-generate-push", {cwd})
   .then((stdout, stderr)=>{
     resp.statusCode = STATUS_OK;
     resp.end(new Date());
