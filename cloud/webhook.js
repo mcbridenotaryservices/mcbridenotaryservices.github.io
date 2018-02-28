@@ -4,7 +4,7 @@ const cwd = require("path").join(__dirname, "..");
 const triggerKey = process.env.TRIGGER_KEY;
 const STATUS_OK = 200;
 const STATUS_SERVER_ERROR = 500;
-const PORT = 80;
+const PORT = process.env.NOTARY_SHEETS_WEBHOOK_PORT || 80;
 
 if (!triggerKey) {console.log("NO TRIGGER KEY"); return;}
 
