@@ -8,7 +8,7 @@ const templates = require("./templates.js");
 const config = require("./sheet-config.js");
 
 if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
-  return console.log("NO GOOGLE_APPLICATION_CREDENTIALS");
+  console.warn("NO GOOGLE_APPLICATION_CREDENTIALS - OK if running in GCP");
 }
 
 config.verifyConfiguredRangeNames()
