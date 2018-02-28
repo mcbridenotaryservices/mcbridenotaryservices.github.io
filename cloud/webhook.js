@@ -16,7 +16,7 @@ http.createServer((req, resp)=>{
   exec(`git checkout development && GOOGLE_APPLICATION_CREDENTIALS=${GAC} npm run pull-generate-push`, {cwd})
   .then((stdout, stderr)=>{
     resp.statusCode = STATUS_OK;
-    resp.end(new Date());
+    resp.end(String(new Date()));
   })
   .catch((err, stdout, stderr)=>{
     const errOutput = err.stack.concat(stdout).concat(stderr);
