@@ -15,6 +15,9 @@ curl "http://metadata.google.internal/computeMetadata/v1/project/attributes/GITH
 chmod 600 ~/.ssh/id_rsa
 ssh-keyscan -H github.com >~/.ssh/known_hosts
 
+# set up GOOGLE_APPLICATION_CREDENTIALS
+curl "http://metadata.google.internal/computeMetadata/v1/project/attributes/GOOGLE_APPLICATION_CREDENTIALS_DATA" -H "Metadata-Flavor: Google" >~/.GOOGLE_APPLICATION_CREDENTIALS_FILE
+
 # clone repo
 rm -rf website-mockup
 git clone git@github.com:4by34/website-mockup.git
@@ -22,4 +25,4 @@ git clone git@github.com:4by34/website-mockup.git
 # start webhook
 cd website-mockup
 npm install
-TRIGGER_KEY= node cloud/webhook.js
+TRIGGER_KEY= GOOGLE_APPLICATION_CREDENTIALS=~/.GOOGLE_APPLICATION_CREDENTIALS_FILE node cloud/webhook.js
