@@ -30,7 +30,8 @@
         'apiKey': 'AIzaSyA-iyiHGz9rgXiJ101FI3iyjcu-0rHHmZc',
         'discoveryDocs': [discoveryUrl],
         'clientId': '497915803080-2lcpoc5remil8tjm1jm52cin9sgherdo.apps.googleusercontent.com',
-        'scope': SCOPE
+        'scope': SCOPE,
+        'access_type': 'offline'
     }).then(function () {
       GoogleAuth = gapi.auth2.getAuthInstance();
 
