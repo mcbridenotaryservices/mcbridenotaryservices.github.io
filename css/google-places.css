@@ -8,7 +8,7 @@ grid-template-columns: repeat( auto-fit, minmax(320px, 1fr));*/
 }
 
 .review-item {
-/*border:solid 1px rgba(190,190,190,.35);*/
+border: none;
 margin:0 auto;
 padding:1em;
 flex: 1 1 20%;
